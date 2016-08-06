@@ -309,7 +309,7 @@
     <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
-    <None Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.config" />
+    <None Include="App_Config\Include\xTendingxDB\xTendingxDB.Unicorn.Configs.config" />
     <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
   </ItemGroup>
   <PropertyGroup>
