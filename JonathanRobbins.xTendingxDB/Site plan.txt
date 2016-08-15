@@ -1,0 +1,16 @@
+Common
+- Logo
+- Main nav
+- footer
+
+Homepage
+- banner
+- CTAs
+
+Products Listing
+- Product listing
+- Download brochure
+
+Product Details
+- Gallery
+- Order form

@@ -1,9 +1,7 @@
 using System;
-using JonathanRobbins.xTendingxDB.Controllers;
-using JonathanRobbins.xTendingxDB.Implementations;
-using JonathanRobbins.xTendingxDB.Interfaces;
+using JonathanRobbins.xTendingxDB.CMS.Contracts;
+using JonathanRobbins.xTendingxDB.CMS.Implementations;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
 
 namespace JonathanRobbins.xTendingxDB.App_Start
 {
@@ -38,7 +36,8 @@ namespace JonathanRobbins.xTendingxDB.App_Start
             // NOTE: To load from web.config uncomment the line below. Make sure to add a Microsoft.Practices.Unity.Configuration to the using statements.
             // container.LoadConfiguration();
 
-            container.RegisterType<ICommentContext, CommentContext>();
+            container.RegisterType<INavigationBuilder, NavigationBuilder>();
+            container.RegisterType<INavigationFactory, NavigationFactory>();
         }
     }
 }

@@ -6,7 +6,6 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using AutoMapper;
-using JonathanRobbins.xTendingxDB.Models;
 using JonathanRobbins.xTendingxDB.ViewModels;
 
 namespace JonathanRobbins.xTendingxDB
@@ -25,10 +24,10 @@ namespace JonathanRobbins.xTendingxDB
 
         private void ConfigureAutoMapper()
         {
-            Mapper.Initialize(config => 
-            config.CreateMap<Comment, CommentVM>()
-                .ForMember(dest => dest.Id, opts => opts.MapFrom(src => src.Id))
-                .ForMember(dest => dest.Message, opts => opts.MapFrom(src => src.Message)));
+            //Mapper.Initialize(config => 
+            //config.CreateMap<Comment, CommentVM>()
+            //    .ForMember(dest => dest.Id, opts => opts.MapFrom(src => src.Id))
+            //    .ForMember(dest => dest.Message, opts => opts.MapFrom(src => src.Message)));
         }
     }
 }

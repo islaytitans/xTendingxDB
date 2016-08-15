@@ -159,6 +159,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{560922F1-A4F
 		Lib\Sitecore.Zip.dll = Lib\Sitecore.Zip.dll
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JonathanRobbins.xTendingxDB.CMS", "JonathanRobbins.xTendingxDB.CMS\JonathanRobbins.xTendingxDB.CMS.csproj", "{1AB04542-9056-43BC-A470-7839A5B6D557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JonathanRobbins.xTendingxDB.Core", "JonathanRobbins.xTendingxDB.Core\JonathanRobbins.xTendingxDB.Core.csproj", "{115CEFF3-15E7-4339-85F9-08F52C22A88D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3B789EFB-B3EC-4E01-A8F6-5CAA0D1C8F0D}"
+	ProjectSection(SolutionItems) = preProject
+		Site plan.txt = Site plan.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -173,6 +182,14 @@ Global
 		{1C1B8B54-E0C6-4DC3-ABE2-D2E76557C137}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C1B8B54-E0C6-4DC3-ABE2-D2E76557C137}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C1B8B54-E0C6-4DC3-ABE2-D2E76557C137}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AB04542-9056-43BC-A470-7839A5B6D557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AB04542-9056-43BC-A470-7839A5B6D557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AB04542-9056-43BC-A470-7839A5B6D557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AB04542-9056-43BC-A470-7839A5B6D557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{115CEFF3-15E7-4339-85F9-08F52C22A88D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{115CEFF3-15E7-4339-85F9-08F52C22A88D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{115CEFF3-15E7-4339-85F9-08F52C22A88D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{115CEFF3-15E7-4339-85F9-08F52C22A88D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
