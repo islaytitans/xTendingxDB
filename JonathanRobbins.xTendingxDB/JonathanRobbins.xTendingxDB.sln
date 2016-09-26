@@ -168,6 +168,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Site plan.txt = Site plan.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JonathanRobbins.xTendingxDB.CMS.xDB", "JonathanRobbins.xTendingxDB.CMS.xDB\JonathanRobbins.xTendingxDB.CMS.xDB.csproj", "{DCA7849F-0727-4CF0-B147-51810BF76156}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -190,6 +192,10 @@ Global
 		{115CEFF3-15E7-4339-85F9-08F52C22A88D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{115CEFF3-15E7-4339-85F9-08F52C22A88D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{115CEFF3-15E7-4339-85F9-08F52C22A88D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCA7849F-0727-4CF0-B147-51810BF76156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCA7849F-0727-4CF0-B147-51810BF76156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCA7849F-0727-4CF0-B147-51810BF76156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCA7849F-0727-4CF0-B147-51810BF76156}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
