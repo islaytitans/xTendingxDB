@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SitecoreConfig\FieldNames\Global.cs" />
+    <Compile Include="SitecoreConfig\ItemIds\Global.cs" />
+    <Compile Include="SitecoreConfig\ItemIds\Templates.cs" />
     <Compile Include="SitecoreConfig\Nodes.cs" />
   </ItemGroup>
   <ItemGroup />

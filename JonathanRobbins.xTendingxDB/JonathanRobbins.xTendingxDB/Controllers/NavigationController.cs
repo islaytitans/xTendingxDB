@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Antlr.Runtime.Tree;
 using JonathanRobbins.xTendingxDB.CMS.Contracts;
 using JonathanRobbins.xTendingxDB.CMS.Models.Navigation;
+using JonathanRobbins.xTendingxDB.Core.SitecoreConfig;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Exceptions;
@@ -24,7 +26,7 @@ namespace JonathanRobbins.xTendingxDB.Controllers
         [HttpGet]
         public ActionResult MainNavigation()
         {
-            Item homeItem = null;
+            Item homeItem = Nodes.SiteHome;
 
             IEnumerable<NavigationItem> navigationItems = _navigationFactory.GetFirstLevelChildren(homeItem, Sitecore.Context.Item).ToList();
 

@@ -413,6 +413,10 @@
       <Project>{1ab04542-9056-43bc-a470-7839a5b6d557}</Project>
       <Name>JonathanRobbins.xTendingxDB.CMS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JonathanRobbins.xTendingxDB.Core\JonathanRobbins.xTendingxDB.Core.csproj">
+      <Project>{115CEFF3-15E7-4339-85F9-08F52C22A88D}</Project>
+      <Name>JonathanRobbins.xTendingxDB.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
