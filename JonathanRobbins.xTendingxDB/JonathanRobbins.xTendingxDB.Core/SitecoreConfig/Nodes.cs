@@ -32,7 +32,14 @@ namespace JonathanRobbins.xTendingxDB.Core.SitecoreConfig
             {
                 if (_siteHome == null)
                 {
-                    _siteHome = Sitecore.Context.Item.Axes.GetAncestors().FirstOrDefault(i => i.TemplateID.Equals(Templates.Home));
+                    if (Sitecore.Context.Item.TemplateID.Equals(Templates.Home))
+                    {
+                        _siteHome = Sitecore.Context.Item;
+                    }
+                    else
+                    {
+                        _siteHome = Sitecore.Context.Item.Axes.GetAncestors().FirstOrDefault(i => i.TemplateID.Equals(Templates.Home));
+                    }
                 }
 
                 return _siteHome;

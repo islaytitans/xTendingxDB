@@ -1,4 +1,5 @@
 ﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Analytics;
 @using Sitecore.Mvc.Analytics.Extensions
 @using Sitecore.Mvc.Presentation
 
@@ -10,6 +11,7 @@
     @Html.Sitecore().VisitorIdentification()
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/Scripts/jquery-ui-1.12.0.min.js"></script>
+    @Html.Sitecore().Rendering("{55716226-84B2-4E90-A312-828EBC2089FD}")
 </head>
 <body>
     <div>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Antlr.Runtime.Tree;
+using Glass.Mapper.Sc.Web.Mvc;
 using JonathanRobbins.xTendingxDB.CMS.Contracts;
 using JonathanRobbins.xTendingxDB.CMS.Models.Navigation;
 using JonathanRobbins.xTendingxDB.Core.SitecoreConfig;
@@ -14,7 +15,7 @@ using Sitecore.Exceptions;
 
 namespace JonathanRobbins.xTendingxDB.Controllers
 {
-    public class NavigationController : Controller
+    public class NavigationController : GlassController
     {
         private readonly INavigationFactory _navigationFactory;
 

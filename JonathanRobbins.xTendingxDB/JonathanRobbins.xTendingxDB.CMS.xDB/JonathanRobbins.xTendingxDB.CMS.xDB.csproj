@@ -44,9 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\BrochureDownload.cs" />
-    <Compile Include="Entities\GalleryViewed.cs" />
-    <Compile Include="Entities\SampleOrder.cs" />
+    <Compile Include="Elements\BrochureDownload.cs" />
+    <Compile Include="Elements\GalleryViewed.cs" />
+    <Compile Include="Elements\SampleOrder.cs" />
     <Compile Include="Facets\KeyInteractionsFacet.cs" />
     <Compile Include="Interfaces\Elements\IBrochureDownload.cs" />
     <Compile Include="Interfaces\Elements\IGalleryViewed.cs" />
@@ -57,7 +57,7 @@
     <Compile Include="Repository\KeyInteractionsRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Element\" />
+    <Folder Include="Entities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
