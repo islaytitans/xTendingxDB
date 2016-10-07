@@ -1,0 +1,15 @@
+﻿@using System.Collections.Specialized
+@using Glass.Mapper.Sc
+@using Sitecore.Mvc
+
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<JonathanRobbins.xTendingxDB.Models.Global.Logo>
+
+<div class="logo">
+    <div class="logo__image">
+        @using (@GlassHtml.BeginRenderLink(Model, logo => logo.Link, GetOutputWriter(), new NameValueCollection { { "class", "logo__link" } }, true))
+        {
+            @Html.Raw(GlassHtml.RenderImage(Model, logo => logo.Image, null, true))
+        }
+    </div>
+</div>
+

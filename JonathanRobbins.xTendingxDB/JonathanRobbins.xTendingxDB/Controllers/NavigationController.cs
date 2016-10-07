@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Antlr.Runtime.Tree;
 using Glass.Mapper.Sc.Web.Mvc;
 using JonathanRobbins.xTendingxDB.CMS.Contracts;
+using JonathanRobbins.xTendingxDB.CMS.Implementations;
 using JonathanRobbins.xTendingxDB.CMS.Models.Navigation;
 using JonathanRobbins.xTendingxDB.Core.SitecoreConfig;
 using Sitecore.Data.Items;
@@ -22,6 +23,11 @@ namespace JonathanRobbins.xTendingxDB.Controllers
         public NavigationController(INavigationFactory navigationFactory)
         {
             _navigationFactory = navigationFactory;
+        }
+
+        public NavigationController()
+        {
+            _navigationFactory = new NavigationFactory(new NavigationBuilder()); ;
         }
 
         [HttpGet]

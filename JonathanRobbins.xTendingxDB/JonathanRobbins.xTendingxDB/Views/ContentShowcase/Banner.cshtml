@@ -1,0 +1,18 @@
+﻿@using System.Collections.Specialized
+@using Sitecore.Mvc
+
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<JonathanRobbins.xTendingxDB.Models.ContentShowcase.Banner>
+
+<div class="banner">
+        <div class="banner__content">
+            <h2>@Editable(x => x.Title)</h2>
+            <div class="banner__strapline">
+                @Editable(x => x.Strapline)
+            </div>
+            @Html.Raw(@GlassHtml.RenderLink(Model, banner => banner.Link, new NameValueCollection {{"class", "banner__link"}}, true))
+        </div>
+        <div class="banner__image">
+            @Html.Raw(GlassHtml.RenderImage(Model, banner => banner.Image, null, true))
+        </div>
+</div>
+
