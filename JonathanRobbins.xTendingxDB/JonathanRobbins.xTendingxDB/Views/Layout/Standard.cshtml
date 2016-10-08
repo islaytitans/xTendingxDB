@@ -3,9 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.Sitecore().ViewRendering("/Views/Global/Logo.cshtml")
-@Html.Sitecore().Controller("Navigation", "MainNavigation")
-@Html.Sitecore().Placeholder("Header");
+@Html.Sitecore().Placeholder("Header")
 <div class="standard-page">
     <div class="standard-page__content">
         @Html.Sitecore().Placeholder("Content")
