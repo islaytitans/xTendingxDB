@@ -362,6 +362,9 @@
     <Content Include="Views\Navigation\MainNavigation.cshtml" />
     <Content Include="Views\ContentShowcase\Banner.cshtml" />
     <Content Include="Views\Global\Logo.cshtml" />
+    <Content Include="Views\ContentBlocks\MainText.cshtml" />
+    <Content Include="Views\ContentBlocks\Title.cshtml" />
+    <Content Include="Views\ContentBlocks\Image.cshtml" />
     <None Include="Views\Navigation\SubNavigation.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>

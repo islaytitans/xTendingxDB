@@ -3,10 +3,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*@Html.Partial("~/Views/Global/Header.cshtml")*@
 @Html.Sitecore().Placeholder("Header")
 <div class="full-width-page">
     <div class="full-width-page__content">
         @Html.Sitecore().Placeholder("Content")
+        @* staticly binding in Sitecore *@
+        @*@@Html.Sitecore().ViewRendering("/Views/Example.cshtml")*@
     </div>
 </div>
