@@ -1,9 +1,10 @@
 ﻿@using System.ComponentModel.DataAnnotations
 @using Sitecore.Mvc
 @using Sitecore.Mvc.Presentation
+@model Sitecore.Mvc.Presentation.RenderingModel
 
 <div class="page-title inner-container">
     <h1>
-        @Html.Sitecore().Field("Title")
+        @Html.Sitecore().Field("Title", Model.Item ?? Model.PageItem)
     </h1>
 </div>

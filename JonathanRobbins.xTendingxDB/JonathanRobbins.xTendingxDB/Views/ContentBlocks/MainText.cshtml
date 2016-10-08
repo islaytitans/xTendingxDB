@@ -1,6 +1,7 @@
 ﻿@using Sitecore.Mvc
 @using Sitecore.Mvc.Presentation
+@model Sitecore.Mvc.Presentation.RenderingModel
 
 <div class="rich-text main-text">
-    @Html.Raw(Html.Sitecore().Field("Main Text"))
+    @Html.Raw(Html.Sitecore().Field("Main Text", Model.Item ?? Model.PageItem))
 </div>
