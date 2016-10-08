@@ -9,7 +9,7 @@ using AutoMapper;
 
 namespace JonathanRobbins.xTendingxDB
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : Sitecore.Web.Application
     {
         protected void Application_Start()
         {
