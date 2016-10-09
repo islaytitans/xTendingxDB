@@ -1,7 +1,13 @@
 using System;
 using JonathanRobbins.xTendingxDB.CMS.Contracts;
 using JonathanRobbins.xTendingxDB.CMS.Implementations;
+using JonathanRobbins.xTendingxDB.Products;
+using JonathanRobbins.xTendingxDB.Products.Implementations;
+using JonathanRobbins.xTendingxDB.Products.Interfaces;
+using JonathanRobbins.xTendingxDB.SearchLogic.Implementations;
+using JonathanRobbins.xTendingxDB.SearchLogic.Interfaces;
 using Microsoft.Practices.Unity;
+using Sitecore.ContentSearch.SearchTypes;
 
 namespace JonathanRobbins.xTendingxDB.App_Start
 {
@@ -38,6 +44,14 @@ namespace JonathanRobbins.xTendingxDB.App_Start
 
             container.RegisterType<INavigationBuilder, NavigationBuilder>();
             container.RegisterType<INavigationFactory, NavigationFactory>();
+            container.RegisterType<ISearchProvider<SearchResultItem>, ContentSearch<SearchResultItem>>(
+                new InjectionConstructor(ProductConstants.ProductIndex, true)
+            );
+            container.RegisterType<ISearchUtility<SearchResultItem>, SearchUtility<SearchResultItem>>(
+                new InjectionConstructor(ProductConstants.ProductIndex, 
+                container.Resolve<ISearchProvider<SearchResultItem>>()));
+            container.RegisterType<IProductRepository, ProductRepository>(
+                new InjectionConstructor(container.Resolve<ISearchUtility<SearchResultItem>>()));
         }
     }
 }

@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4C30C094-8144-4D32-BB24-7A22686F88F5}</ProjectGuid>
+    <ProjectGuid>{F3C953BB-FEC1-49FD-A81C-C7828E21E31A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JonathanRobbins.xTendingxDB.Products</RootNamespace>
-    <AssemblyName>JonathanRobbins.xTendingxDB.Products</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <RootNamespace>JonathanRobbins.xTendingxDB.SearchLogic</RootNamespace>
+    <AssemblyName>JonathanRobbins.xTendingxDB.SearchLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,17 +33,8 @@
     <Reference Include="Sitecore.ContentSearch">
       <HintPath>..\Lib\Sitecore.ContentSearch.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.ContentSearch.Client">
-      <HintPath>..\Lib\Sitecore.ContentSearch.Client.dll</HintPath>
-    </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq">
       <HintPath>..\Lib\Sitecore.ContentSearch.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch.Linq.Lucene">
-      <HintPath>..\Lib\Sitecore.ContentSearch.Linq.Lucene.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch.LuceneProvider">
-      <HintPath>..\Lib\Sitecore.ContentSearch.LuceneProvider.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\Lib\Sitecore.Kernel.dll</HintPath>
@@ -59,28 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Product.cs" />
-    <Compile Include="Entities\ProductSearchArgs.cs" />
-    <Compile Include="Enums\Faction.cs" />
-    <Compile Include="Enums\ShipType.cs" />
-    <Compile Include="Implementations\ProductRepository.cs" />
-    <Compile Include="Interfaces\IProductRepository.cs" />
-    <Compile Include="ProductConstants.cs" />
+    <Compile Include="Entities\SearchArgs.cs" />
+    <Compile Include="Entities\SearchResults.cs" />
+    <Compile Include="Implementations\ContentSearch.cs" />
+    <Compile Include="Implementations\SearchUtility.cs" />
+    <Compile Include="Interfaces\ISearchProvider.cs" />
+    <Compile Include="Interfaces\ISearchUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SitecoreConfig\Nodes.cs" />
-    <Compile Include="SitecoreConfig\Templates.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\JonathanRobbins.xTendingxDB.Core\JonathanRobbins.xTendingxDB.Core.csproj">
-      <Project>{115ceff3-15e7-4339-85f9-08f52c22a88d}</Project>
-      <Name>JonathanRobbins.xTendingxDB.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\JonathanRobbins.xTendingxDB.SearchLogic\JonathanRobbins.xTendingxDB.SearchLogic.csproj">
-      <Project>{f3c953bb-fec1-49fd-a81c-c7828e21e31a}</Project>
-      <Name>JonathanRobbins.xTendingxDB.SearchLogic</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

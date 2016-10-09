@@ -139,6 +139,9 @@
     <Reference Include="Sitecore.Analytics">
       <HintPath>..\Lib\Sitecore.Analytics.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch">
+      <HintPath>..\Lib\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Sitecore.Kernel.dll</HintPath>
@@ -367,13 +370,13 @@
     <Content Include="Views\ContentBlocks\Image.cshtml" />
     <None Include="Views\Navigation\SubNavigation.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Products\ProductListing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\Sitecore\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Comment\" />
-    <Folder Include="Views\Products\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -441,6 +444,10 @@
     <ProjectReference Include="..\JonathanRobbins.xTendingxDB.Products\JonathanRobbins.xTendingxDB.Products.csproj">
       <Project>{4c30c094-8144-4d32-bb24-7a22686f88f5}</Project>
       <Name>JonathanRobbins.xTendingxDB.Products</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JonathanRobbins.xTendingxDB.SearchLogic\JonathanRobbins.xTendingxDB.SearchLogic.csproj">
+      <Project>{f3c953bb-fec1-49fd-a81c-c7828e21e31a}</Project>
+      <Name>JonathanRobbins.xTendingxDB.SearchLogic</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

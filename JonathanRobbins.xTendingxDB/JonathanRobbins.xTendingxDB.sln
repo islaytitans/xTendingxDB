@@ -172,6 +172,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JonathanRobbins.xTendingxDB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JonathanRobbins.xTendingxDB.Products", "JonathanRobbins.xTendingxDB.Products\JonathanRobbins.xTendingxDB.Products.csproj", "{4C30C094-8144-4D32-BB24-7A22686F88F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JonathanRobbins.xTendingxDB.SearchLogic", "JonathanRobbins.xTendingxDB.SearchLogic\JonathanRobbins.xTendingxDB.SearchLogic.csproj", "{F3C953BB-FEC1-49FD-A81C-C7828E21E31A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -202,6 +204,10 @@ Global
 		{4C30C094-8144-4D32-BB24-7A22686F88F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C30C094-8144-4D32-BB24-7A22686F88F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C30C094-8144-4D32-BB24-7A22686F88F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3C953BB-FEC1-49FD-A81C-C7828E21E31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3C953BB-FEC1-49FD-A81C-C7828E21E31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3C953BB-FEC1-49FD-A81C-C7828E21E31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3C953BB-FEC1-49FD-A81C-C7828E21E31A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

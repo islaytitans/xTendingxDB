@@ -6,5 +6,6 @@ namespace JonathanRobbins.xTendingxDB.Products.SitecoreConfig
     {
         public static ID ProductListing = new ID("{80BFCF32-EBFF-4970-86EF-4CA8259C4C96}");
         public static ID ProductDetails = new ID("{4E9E51D0-FB1F-49CB-8B2A-BC393C136899}");
+        public static ID Product = new ID("{EA40B88D-73AC-4AB6-83AE-FA6CFE9DEAD5}");
     }
 }
