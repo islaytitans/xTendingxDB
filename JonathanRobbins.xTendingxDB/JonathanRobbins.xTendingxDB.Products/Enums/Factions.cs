@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JonathanRobbins.xTendingxDB.Products.Enums
 {
-    public enum Faction
+    public enum Factions
     {
         RebelsAlliance,
         GalacticEmpire

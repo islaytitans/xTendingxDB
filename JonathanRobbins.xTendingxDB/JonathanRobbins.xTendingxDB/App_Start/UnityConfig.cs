@@ -45,11 +45,9 @@ namespace JonathanRobbins.xTendingxDB.App_Start
             container.RegisterType<INavigationBuilder, NavigationBuilder>();
             container.RegisterType<INavigationFactory, NavigationFactory>();
             container.RegisterType<ISearchProvider<SearchResultItem>, ContentSearch<SearchResultItem>>(
-                new InjectionConstructor(ProductConstants.ProductIndex, true)
-            );
+                new InjectionConstructor(ProductConstants.ProductIndex, true));
             container.RegisterType<ISearchUtility<SearchResultItem>, SearchUtility<SearchResultItem>>(
-                new InjectionConstructor(ProductConstants.ProductIndex, 
-                container.Resolve<ISearchProvider<SearchResultItem>>()));
+                new InjectionConstructor(container.Resolve<ISearchProvider<SearchResultItem>>()));
             container.RegisterType<IProductRepository, ProductRepository>(
                 new InjectionConstructor(container.Resolve<ISearchUtility<SearchResultItem>>()));
         }

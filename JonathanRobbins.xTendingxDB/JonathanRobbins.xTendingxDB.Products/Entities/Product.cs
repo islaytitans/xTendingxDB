@@ -22,7 +22,7 @@ namespace JonathanRobbins.xTendingxDB.Products.Entities
         public double Price { get; set; }
         public string Quote { get; set; }
         public ShipType Type { get; set; }
-        public IEnumerable<Faction> Factions { get; set; }
+        public IEnumerable<Factions> Factions { get; set; }
 
         public Product()
         {
@@ -81,7 +81,7 @@ namespace JonathanRobbins.xTendingxDB.Products.Entities
             return shipType;
         }
 
-        public IEnumerable<Faction> DetermineFactions(Field factionField)
+        public IEnumerable<Enums.Factions> DetermineFactions(Field factionField)
         {
             if (factionField == null)
             {
@@ -101,15 +101,15 @@ namespace JonathanRobbins.xTendingxDB.Products.Entities
                 throw new Exception("No faction set in faction field - " + factionField.ID);
             }
 
-            var factions = new List<Faction>();
+            var factions = new List<Enums.Factions>();
 
             if (factionIds.Contains(new ID("{E5BF1E72-C4C9-4562-A457-4870299A4A08}")))
             {
-                factions.Add(Faction.GalacticEmpire);
+                factions.Add(Enums.Factions.GalacticEmpire);
             }
             if (factionIds.Contains(new ID("{0FC33635-3AC2-45AC-942C-DF79C6DC1684}")))
             {
-                factions.Add(Faction.RebelsAlliance);
+                factions.Add(Enums.Factions.RebelsAlliance);
             }
 
             if (!factions.Any())

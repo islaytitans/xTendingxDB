@@ -8,6 +8,6 @@ namespace JonathanRobbins.xTendingxDB.Products
 {
     public class ProductConstants
     {
-        public const string ProductIndex = "sitecore_master_index";
+        public const string ProductIndex = "product_index_master";
     }
 }

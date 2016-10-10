@@ -1,9 +1,23 @@
-﻿
-@using JonathanRobbins.xTendingxDB.Products.Entities
-@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<IEnumerable<JonathanRobbins.xTendingxDB.Products.Entities.Product>>
+﻿@using JonathanRobbins.xTendingxDB.Products.Entities
+@using JonathanRobbins.xTendingxDB.ViewModels
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<IEnumerable<JonathanRobbins.xTendingxDB.ViewModels.ProductListingVM>>
 
-@foreach (Product product in Model)
+<h2>Ships</h2>
+
+@foreach (ProductListingVM product in Model)
 {
-    
+    <h3>@Editable(product, vm => vm.Title)</h3>
+    <p>@Editable(product, vm => vm.Type)</p>
+    foreach (Faction faction in product.Factions)
+     {
+         <img src="@faction.ImageUrl" alt="@faction.Title" width="80" height="80"/>
+     }
+
+    @Editable(product, vm => vm.Summary)
+    @RenderImage(product, vm => vm.Image)
+    @product.Image
+    @product.PriceString
+    @product.Brochure
+    <a href="@product.ProductDetailsUrl" title="View">View</a>
 }
 

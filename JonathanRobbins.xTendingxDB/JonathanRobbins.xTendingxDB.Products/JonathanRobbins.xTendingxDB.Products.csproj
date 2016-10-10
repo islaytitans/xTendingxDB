@@ -59,9 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Faction.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ProductSearchArgs.cs" />
-    <Compile Include="Enums\Faction.cs" />
+    <Compile Include="Enums\Factions.cs" />
     <Compile Include="Enums\ShipType.cs" />
     <Compile Include="Implementations\ProductRepository.cs" />
     <Compile Include="Interfaces\IProductRepository.cs" />

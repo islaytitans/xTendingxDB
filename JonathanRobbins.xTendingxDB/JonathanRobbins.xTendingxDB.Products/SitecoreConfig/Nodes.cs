@@ -18,5 +18,19 @@ namespace JonathanRobbins.xTendingxDB.Products.SitecoreConfig
                 return _productListing;
             }
         }
+
+        private static Item _productDetails;
+        public static Item ProductDetails
+        {
+            get
+            {
+                if (_productDetails == null)
+                {
+                    _productDetails = ProductListing.GetChildren().FirstOrDefault(i => i.TemplateID.Equals(Templates.ProductDetails));
+                }
+
+                return _productDetails;
+            }
+        }
     }
 }

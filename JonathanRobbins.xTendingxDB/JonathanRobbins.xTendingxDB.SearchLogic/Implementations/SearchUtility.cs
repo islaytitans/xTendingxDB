@@ -15,12 +15,10 @@ namespace JonathanRobbins.xTendingxDB.SearchLogic.Implementations
 {
     public class SearchUtility<T> : ISearchUtility<T> where T : SearchResultItem
     {
-        private readonly ISearchIndex _index;
         private readonly ISearchProvider<T> _searchProvider;
 
-        public SearchUtility(string indexName, ISearchProvider<T> searchProvider)
+        public SearchUtility(ISearchProvider<T> searchProvider)
         {
-            _index = ContentSearchManager.GetIndex(indexName);
             _searchProvider = searchProvider;
         }
 

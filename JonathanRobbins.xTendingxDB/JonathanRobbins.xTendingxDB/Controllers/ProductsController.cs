@@ -8,6 +8,7 @@ using JonathanRobbins.xTendingxDB.Products.Entities;
 using JonathanRobbins.xTendingxDB.Products.Implementations;
 using JonathanRobbins.xTendingxDB.Products.Interfaces;
 using JonathanRobbins.xTendingxDB.SearchLogic.Implementations;
+using JonathanRobbins.xTendingxDB.ViewModels;
 using Sitecore.ContentSearch.SearchTypes;
 
 namespace JonathanRobbins.xTendingxDB.Controllers
@@ -33,7 +34,23 @@ namespace JonathanRobbins.xTendingxDB.Controllers
 
             var products = _productRepository.Search(args);
 
-            return View("ProductListing", products);
-        }  
+            throw new NotImplementedException();
+        }
+
+        public ActionResult ProductListing()
+        {
+            var args = new ProductSearchArgs(ProductConstants.ProductIndex);
+
+            var products = _productRepository.Search(args);
+
+            var productListingViewModels = new List<ProductListingVM>();
+
+            foreach (Product product in products)
+            {
+                productListingViewModels.Add(new ProductListingVM(product));
+            }
+
+            return View("ProductListing", productListingViewModels);
+        }
     }
 }
