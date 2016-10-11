@@ -1,0 +1,24 @@
+﻿@using JonathanRobbins.xTendingxDB.Products.Entities
+@using JonathanRobbins.xTendingxDB.ViewModels
+
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<JonathanRobbins.xTendingxDB.ViewModels.ProductDetailsVM>
+
+<h2>@Editable(Model, vm => vm.Title)</h2>
+
+<p>@Editable(Model, vm => vm.Type)</p>
+@foreach (Faction faction in Model.Factions)
+{
+    <img src="@faction.ImageUrl" alt="@faction.Title" width="80" height="80" />
+}
+
+@Editable(Model, vm => vm.Summary)
+@if (Model.ImageUrls != null && Model.ImageUrls.Any())
+{
+    <a href="#">View image gallery</a>
+    foreach (string imageUrl in Model.ImageUrls)
+    {
+        <img src="@imageUrl" alt="@Model.Title" width="80" height="80"/>
+    }
+}
+@Model.PriceString
+

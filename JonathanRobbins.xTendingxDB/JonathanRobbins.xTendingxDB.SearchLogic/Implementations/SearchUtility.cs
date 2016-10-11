@@ -22,14 +22,9 @@ namespace JonathanRobbins.xTendingxDB.SearchLogic.Implementations
             _searchProvider = searchProvider;
         }
 
-        public Entities.SearchResults<T> SearchByTemplateId(IEnumerable<ID> templateIds)
+        public Entities.SearchResults<T> SearchByTemplateId(SearchArgs searchArgs)
         {
             Entities.SearchResults<T> results;
-
-            var searchArgs = new SearchArgs()
-            {
-                TemplateIds = templateIds
-            };
 
             results = _searchProvider.Search(searchArgs);
 

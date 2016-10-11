@@ -37,15 +37,8 @@ namespace JonathanRobbins.xTendingxDB.Products.Implementations
             {
                 throw new ArgumentException("args");
             }
-            if (string.IsNullOrWhiteSpace(args.IndexName))
-            {
-                throw new ArgumentException("args.IndexName");
-            }
 
-            var results = _searchUtility.SearchByTemplateId(new List<ID>()
-            {
-                Templates.Product
-            });
+            var results = _searchUtility.SearchByTemplateId(args);
 
             var products = new List<Product>();
 

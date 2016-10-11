@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using JonathanRobbins.xTendingxDB.Products;
@@ -30,7 +31,7 @@ namespace JonathanRobbins.xTendingxDB.Controllers
 
         public ActionResult Search()
         {
-            var args = new ProductSearchArgs(ProductConstants.ProductIndex);
+            var args = new ProductSearchArgs(0, 12);
 
             var products = _productRepository.Search(args);
 
@@ -39,7 +40,7 @@ namespace JonathanRobbins.xTendingxDB.Controllers
 
         public ActionResult ProductListing()
         {
-            var args = new ProductSearchArgs(ProductConstants.ProductIndex);
+            var args = new ProductSearchArgs(0, 12);
 
             var products = _productRepository.Search(args);
 
@@ -51,6 +52,36 @@ namespace JonathanRobbins.xTendingxDB.Controllers
             }
 
             return View("ProductListing", productListingViewModels);
+        }
+
+        public ActionResult GetProductDetailsByUrl()
+        {
+            string term = HttpContext.Request.Url.AbsolutePath.Split(new[] { "/" }, StringSplitOptions.RemoveEmptyEntries).Last();
+
+            term = WebUtility.HtmlDecode(term).Replace("-", " ");
+
+            if (string.IsNullOrEmpty(term))
+            {
+                return View("ProductDetails");
+            }
+
+            var args = new ProductSearchArgs(0, 1)
+            {
+                Term = term,
+            };
+
+            var products = _productRepository.Search(args).ToList();
+
+            if (products.Any())
+            {
+                var productDetailsVM = new ProductDetailsVM(products.FirstOrDefault());
+
+                return View("ProductDetails", productDetailsVM);
+            }
+            else
+            {
+                return View("ProductDetails");
+            }
         }
     }
 }

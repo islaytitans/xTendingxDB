@@ -2,38 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Glass.Mapper.Sc.Fields;
-using JonathanRobbins.xTendingxDB.Core.SitecoreConfig;
 using JonathanRobbins.xTendingxDB.Products.Entities;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Links;
-using Sitecore.Publishing.Pipelines.Publish;
+using Sitecore.Resources.Media;
 using Sitecore.Web.UI.WebControls;
 
 namespace JonathanRobbins.xTendingxDB.ViewModels
 {
-    public class ProductListingVM
+    public class ProductDetailsVM
     {
-        public ProductListingVM(Product product)
+        public ProductDetailsVM(Product product)
         {
             Title = product.Item["Title"];
             Summary = product.Item["Summary"];
-            Image = new HtmlString(FieldRenderer.Render(product.Item, "Image"));
             Price = product.Price;
-            Brochure = new HtmlString(FieldRenderer.Render(product.Item, "Brochure"));
-
-            string url = LinkManager.GetItemUrl(Products.SitecoreConfig.Nodes.ProductDetails);
-
-            if (url.EndsWith("/"))
-            {
-                url = url.Remove(url.LastIndexOf('/'));
-            }
-
-            int lastSlash = url.LastIndexOf('/');
-            url = (lastSlash > -1) ? url.Substring(0, lastSlash + 1) : url;
-
-            ProductDetailsUrl = $"{url}{product.Item.Name.ToLower().Trim().Replace(" ","-")}";
 
             if (!string.IsNullOrWhiteSpace(product.Item["Type"]))
             {
@@ -58,16 +42,30 @@ namespace JonathanRobbins.xTendingxDB.ViewModels
                     }
                 }
             }
+            if (!string.IsNullOrWhiteSpace(product.Item["Image gallery"]))
+            {
+                MultilistField multilistField = product.Item.Fields["Image gallery"];
+                if (multilistField?.TargetIDs != null)
+                {
+                    foreach (var item in multilistField.GetItems())
+                    { 
+                        if (ImageUrls == null)
+                        {
+                            ImageUrls = new List<string>();
+                        }
+
+                        ImageUrls.Add(MediaManager.GetMediaUrl(item));
+                    }
+                }
+            }
         }
 
         public string Title { get; set; }
         public string Summary { get; set; }
-        public HtmlString Image { get; set; }
+        public List<string> ImageUrls { get; set; }
         public double Price { get; set; }
         public string PriceString => $"${Price:N2}";
         public string Type { get; set; }
         public List<Faction> Factions { get; set; }
-        public string ProductDetailsUrl { get; set; }
-        public HtmlString Brochure { get; set; }
     }
 }
