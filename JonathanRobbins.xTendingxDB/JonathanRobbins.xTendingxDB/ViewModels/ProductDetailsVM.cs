@@ -15,9 +15,20 @@ namespace JonathanRobbins.xTendingxDB.ViewModels
     {
         public ProductDetailsVM(Product product)
         {
-            Title = product.Item["Title"];
-            Summary = product.Item["Summary"];
+            if (product == null)
+            {
+                return;
+            }
+            if (product.Item == null)
+            {
+                
+            }
+
+            Title = product.Title;
+            Description = product.Description;
+            Sku = product.Sku;
             Price = product.Price;
+            Quote = product.Quote;
 
             if (!string.IsNullOrWhiteSpace(product.Item["Type"]))
             {
@@ -60,8 +71,12 @@ namespace JonathanRobbins.xTendingxDB.ViewModels
             }
         }
 
+        public string Quote { get; set; }
+
+        public string Sku { get; set; }
+
         public string Title { get; set; }
-        public string Summary { get; set; }
+        public string Description { get; set; }
         public List<string> ImageUrls { get; set; }
         public double Price { get; set; }
         public string PriceString => $"${Price:N2}";

@@ -5,20 +5,32 @@
 
 <h2>@Editable(Model, vm => vm.Title)</h2>
 
-<p>@Editable(Model, vm => vm.Type)</p>
-@foreach (Faction faction in Model.Factions)
-{
-    <img src="@faction.ImageUrl" alt="@faction.Title" width="80" height="80" />
-}
+<h3>@Model.PriceString</h3>
 
-@Editable(Model, vm => vm.Summary)
+<h4>@Model.Sku</h4>
+
+<p>@Editable(Model, vm => vm.Type)</p>
+<div>
+    @foreach (Faction faction in Model.Factions)
+    {
+        <img src="@faction.ImageUrl" alt="@faction.Title" width="80" height="80" />
+        <p>@faction.Title</p>
+    }
+</div>
 @if (Model.ImageUrls != null && Model.ImageUrls.Any())
 {
     <a href="#">View image gallery</a>
-    foreach (string imageUrl in Model.ImageUrls)
-    {
-        <img src="@imageUrl" alt="@Model.Title" width="80" height="80"/>
-    }
+    <div>
+        @foreach (string imageUrl in Model.ImageUrls)
+        {
+            <img src="@imageUrl" alt="@Model.Title" width="300" height="300" />
+        }
+    </div>
 }
-@Model.PriceString
+<div>
+    @Editable(Model, vm => vm.Description)
+</div>
+<q>
+   @Editable(Model, vm => vm.Quote)
+</q>
 
