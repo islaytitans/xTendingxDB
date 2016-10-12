@@ -15,13 +15,25 @@ namespace JonathanRobbins.xTendingxDB.ViewModels
 {
     public class ProductListingVM
     {
+        public string Title { get; set; }
+        public string Summary { get; set; }
+        public HtmlString Image { get; set; }
+        public double Price { get; set; }
+        public string PriceString => $"${Price:N2}";
+        public string Type { get; set; }
+        public string Sku { get; set; }
+        public List<Faction> Factions { get; set; }
+        public string ProductDetailsUrl { get; set; }
+        public BrochureVM Brochure { get; set; }
+
         public ProductListingVM(Product product)
         {
             Title = product.Item["Title"];
             Summary = product.Item["Summary"];
             Image = new HtmlString(FieldRenderer.Render(product.Item, "Image"));
             Price = product.Price;
-            Brochure = new HtmlString(FieldRenderer.Render(product.Item, "Brochure"));
+            Brochure = new BrochureVM(product.Item);
+            Sku = product.Sku;
 
             string url = LinkManager.GetItemUrl(Products.SitecoreConfig.Nodes.ProductDetails);
 
@@ -59,15 +71,5 @@ namespace JonathanRobbins.xTendingxDB.ViewModels
                 }
             }
         }
-
-        public string Title { get; set; }
-        public string Summary { get; set; }
-        public HtmlString Image { get; set; }
-        public double Price { get; set; }
-        public string PriceString => $"${Price:N2}";
-        public string Type { get; set; }
-        public List<Faction> Factions { get; set; }
-        public string ProductDetailsUrl { get; set; }
-        public HtmlString Brochure { get; set; }
     }
 }

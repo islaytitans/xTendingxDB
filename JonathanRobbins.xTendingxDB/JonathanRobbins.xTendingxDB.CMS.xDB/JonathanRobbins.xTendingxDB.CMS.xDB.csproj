@@ -31,8 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Sitecore.Analytics">
+      <HintPath>..\Lib\Sitecore.Analytics.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Analytics.Model">
       <HintPath>..\Lib\Sitecore.Analytics.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,18 +54,20 @@
     <Compile Include="Elements\BrochureDownload.cs" />
     <Compile Include="Elements\GalleryViewed.cs" />
     <Compile Include="Elements\SampleOrder.cs" />
+    <Compile Include="Entities\BrochureDownload.cs" />
+    <Compile Include="Entities\KeyInteractionsModel.cs" />
     <Compile Include="Facets\KeyInteractionsFacet.cs" />
     <Compile Include="Interfaces\Elements\IBrochureDownload.cs" />
     <Compile Include="Interfaces\Elements\IGalleryViewed.cs" />
     <Compile Include="Interfaces\Elements\ISampleOrder.cs" />
     <Compile Include="Interfaces\Facets\IKeyInteractionsFacet.cs" />
+    <Compile Include="Interfaces\Repository\IGoalRepository.cs" />
     <Compile Include="Interfaces\Repository\IKeyInteractionsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\GoalRepository.cs" />
     <Compile Include="Repository\KeyInteractionsRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

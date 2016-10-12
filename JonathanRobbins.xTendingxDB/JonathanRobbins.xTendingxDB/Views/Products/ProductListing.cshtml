@@ -11,13 +11,22 @@
     foreach (Faction faction in product.Factions)
      {
          <img src="@faction.ImageUrl" alt="@faction.Title" width="80" height="80"/>
-     }
+    }
 
-    @Editable(product, vm => vm.Summary)
-    @RenderImage(product, vm => vm.Image)
-    @product.Image
-    @product.PriceString
-    @product.Brochure
+    <div>
+        @Editable(product, vm => vm.Summary)
+    </div>
+    <div>
+        @product.Image
+    </div>
+    <p>
+        @product.PriceString
+    </p>
+    <a href="@product.Brochure.Url" class="js-brochure-tracking js-goal-tracking" 
+       data-product-title="@product.Title" data-product-sku="@product.Sku"
+       data-brochure-title="@product.Brochure.Title" data-brochure-id="@product.Brochure.Id" 
+       target="_blank" >Brochure</a>
+
     <a href="@product.ProductDetailsUrl" title="View">View</a>
 }
 
