@@ -8,6 +8,7 @@ using Sitecore.Data.Items;
 using Sitecore.Links;
 using Sitecore.Resources.Media;
 using Sitecore.Web.UI.WebControls;
+using Image = Glass.Mapper.Sc.Fields.Image;
 
 namespace JonathanRobbins.xTendingxDB.ViewModels
 {
@@ -53,22 +54,7 @@ namespace JonathanRobbins.xTendingxDB.ViewModels
                     }
                 }
             }
-            if (!string.IsNullOrWhiteSpace(product.Item["Image gallery"]))
-            {
-                MultilistField multilistField = product.Item.Fields["Image gallery"];
-                if (multilistField?.TargetIDs != null)
-                {
-                    foreach (var item in multilistField.GetItems())
-                    { 
-                        if (ImageUrls == null)
-                        {
-                            ImageUrls = new List<string>();
-                        }
-
-                        ImageUrls.Add(MediaManager.GetMediaUrl(item));
-                    }
-                }
-            }
+            ImageGallery = new ImageGalleryVM(product.Item["Image gallery"]);
         }
 
         public string Quote { get; set; }
@@ -77,7 +63,7 @@ namespace JonathanRobbins.xTendingxDB.ViewModels
 
         public string Title { get; set; }
         public string Description { get; set; }
-        public List<string> ImageUrls { get; set; }
+        public ImageGalleryVM ImageGallery { get; set; }
         public double Price { get; set; }
         public string PriceString => $"${Price:N2}";
         public string Type { get; set; }

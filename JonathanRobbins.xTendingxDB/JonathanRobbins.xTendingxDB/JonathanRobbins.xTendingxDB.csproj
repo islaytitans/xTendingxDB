@@ -292,6 +292,7 @@
     <Compile Include="Models\Navigation\MainNavigation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BrochureVM.cs" />
+    <Compile Include="ViewModels\ImageGalleryVM.cs" />
     <Compile Include="ViewModels\ProductDetailsVM.cs" />
     <Compile Include="ViewModels\ProductListingVM.cs" />
   </ItemGroup>

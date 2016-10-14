@@ -1,5 +1,6 @@
 ﻿@using JonathanRobbins.xTendingxDB.Products.Entities
 @using JonathanRobbins.xTendingxDB.ViewModels
+@using Sitecore.Mvc
 
 @inherits Glass.Mapper.Sc.Web.Mvc.GlassView<JonathanRobbins.xTendingxDB.ViewModels.ProductDetailsVM>
 
@@ -17,16 +18,19 @@
         <p>@faction.Title</p>
     }
 </div>
-@if (Model.ImageUrls != null && Model.ImageUrls.Any())
+
+@if (Model.ImageGallery != null && Model.ImageGallery.Images.Any())
 {
-    <a href="#">View image gallery</a>
+    <a href="#" data-product-title="@Model.Title" data-product-sku="@Model.Sku" data-gallery-id="">View image gallery</a>
     <div>
-        @foreach (string imageUrl in Model.ImageUrls)
+        <h3></h3>
+        @foreach (var image in Model.ImageGallery.Images)
         {
-            <img src="@imageUrl" alt="@Model.Title" width="300" height="300" />
+            <img src="@image.Key" alt="@image.Value" width="300" height="300"/>
         }
     </div>
 }
+
 <div>
     @Editable(Model, vm => vm.Description)
 </div>

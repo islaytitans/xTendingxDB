@@ -30,7 +30,7 @@ namespace JonathanRobbins.xTendingxDB.ViewModels
         {
             Title = product.Item["Title"];
             Summary = product.Item["Summary"];
-            Image = new HtmlString(FieldRenderer.Render(product.Item, "Image"));
+            Image = new HtmlString(FieldRenderer.Render(product.Item, "Image", "w=300&h300"));
             Price = product.Price;
             Brochure = new BrochureVM(product.Item);
             Sku = product.Sku;
