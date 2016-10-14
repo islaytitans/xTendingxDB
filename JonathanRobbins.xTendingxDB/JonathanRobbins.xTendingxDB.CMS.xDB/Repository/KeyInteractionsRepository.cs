@@ -72,5 +72,32 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Repository
 
             Log.Info("KeyInteractionsRepository Created entry in xDB " + "Contact - " + contact.ContactId, this);
         }
+
+        public void Set(Contact contact, ImageGalleryViewed imageGalleryViewed)
+        {
+            if (contact == null)
+            {
+                throw new ArgumentNullException(nameof(contact));
+            }
+            if (imageGalleryViewed == null)
+            {
+                throw new ArgumentNullException(nameof(imageGalleryViewed));
+            }
+
+            Log.Info("KeyInteractionsRepository Set " + "Contact - " + contact.ContactId, this);
+
+            IKeyInteractionsFacet facet = contact.GetFacet<IKeyInteractionsFacet>(KeyInteractionsFacet.FacetName);
+
+            Log.Info("KeyInteractionsRepository Got Facet " + "Contact - " + contact.ContactId, this);
+
+            var galleriesViewed = facet.GalleriesViewed.Create();
+            galleriesViewed.Id = imageGalleryViewed.Id;
+            galleriesViewed.ProductTitle = imageGalleryViewed.ProductTitle;
+            galleriesViewed.ProductSku = imageGalleryViewed.ProductSku;
+            galleriesViewed.Factions = string.Join(",", imageGalleryViewed.Factions);
+            galleriesViewed.ProductType = imageGalleryViewed.ProductType;
+
+            Log.Info("KeyInteractionsRepository Created entry in xDB " + "Contact - " + contact.ContactId, this);
+        }
     }
 }

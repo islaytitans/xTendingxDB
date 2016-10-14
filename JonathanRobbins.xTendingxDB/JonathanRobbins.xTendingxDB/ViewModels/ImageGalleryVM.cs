@@ -12,6 +12,7 @@ namespace JonathanRobbins.xTendingxDB.ViewModels
 {
     public class ImageGalleryVM
     {
+        public string Id { get; set; }
         public string Title { get; set; }
         public List<KeyValuePair<string, string>> Images { get; set; }
         public IEnumerable<string> ProductNames { get; set; }
@@ -31,6 +32,7 @@ namespace JonathanRobbins.xTendingxDB.ViewModels
 
             Item imageGallery = Sitecore.Context.Database.GetItem(id);
 
+            Id = imageGalleryId;
             Title = imageGallery?["Title"];
             var productItems = ((MultilistField)imageGallery?.Fields["Products"])?.GetItems();
             ProductNames = (from p in productItems

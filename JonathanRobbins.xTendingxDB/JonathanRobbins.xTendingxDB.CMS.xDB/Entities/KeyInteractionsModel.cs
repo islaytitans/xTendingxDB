@@ -8,5 +8,7 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Entities
 {
     public class KeyInteractionsModel
     {
+        public IEnumerable<BrochureDownload> BrochureDownload { get; set; }
+        public IEnumerable<ImageGalleryViewed> ImageGalleryViewed { get; set; }
     }
 }

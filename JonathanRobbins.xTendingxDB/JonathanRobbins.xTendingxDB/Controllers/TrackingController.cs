@@ -124,5 +124,30 @@ namespace JonathanRobbins.xTendingxDB.Controllers
 
             return Json(new Tuple<bool, string>(true, "Successfully registered goal"));
         }
+
+        [HttpPost]
+        public JsonResult RegisterGalleryViewed(ImageGalleryViewed imageGalleryViewed)
+        {
+            if (imageGalleryViewed == null)
+            {
+                Response.StatusCode = 400;
+                return Json(new ArgumentNullException());
+            }
+
+            if (!Tracker.IsActive)
+                Tracker.StartTracking();
+
+            try
+            {
+                _keyInteractionsRepository.Set(Tracker.Current.Session.Contact, imageGalleryViewed);
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.Message, e, this);
+                return Json(new Tuple<bool, string>(false, e.Message));
+            }
+
+            return Json(new Tuple<bool, string>(true, "Successfully registered goal"));
+        }
     }
 }

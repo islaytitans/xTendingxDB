@@ -9,5 +9,10 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Interfaces.Elements
 {
     public interface IGalleryViewed : IElement, IValidatable
     {
+        string Id { get; set; }
+        string ProductTitle { get; set; }
+        string ProductSku { get; set; }
+        string Factions { get; set; }
+        string ProductType { get; set; }
     }
 }

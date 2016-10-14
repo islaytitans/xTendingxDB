@@ -21,7 +21,7 @@
 
 @if (Model.ImageGallery != null && Model.ImageGallery.Images.Any())
 {
-    <a href="#" data-product-title="@Model.Title" data-product-sku="@Model.Sku" data-gallery-id="">View image gallery</a>
+    <a href="#" class="js-image-gallery-tracking" data-product-title="@Model.Title" data-product-sku="@Model.Sku" data-gallery-id="@Model.ImageGallery.Id" data-factions="@string.Join(",", Model.Factions.Select(f => f.Title))" data-product-type="@Model.Type">View image gallery</a>
     <div>
         <h3></h3>
         @foreach (var image in Model.ImageGallery.Images)

@@ -4,11 +4,18 @@ XX.tracking = (function ($) {
 
     var trackingGoalClass = '.js-goal-tracking';
     var trackingBrochureClass = '.js-brochure-tracking';
-    var trackingController = 'tracking';
-    var registerGoalAction = 'registergoal';
-    var registerBrochureDownloadAction = 'registerBrochureDownload';
+    var trackingImageGalleryClass = '.js-image-gallery-tracking';
+    var trackingController = 'Tracking';
+    var registerGoalAction = 'RegisterGoal';
+    var registerBrochureDownloadAction = 'RegisterBrochureDownload';
+    var registerGalleryViewedAction = 'RegisterGalleryViewed';
 
     var bindTrackingEvents = function () {
+        $(document).on('click', trackingImageGalleryClass, function () {
+            var $el = $(this);
+            registerGalleryView($el);
+        });
+
         $(document).on('click', trackingBrochureClass, function () {
             var $el = $(this);
             registerBrochureDownload($el);
@@ -31,7 +38,23 @@ XX.tracking = (function ($) {
 
         var url = window.location.protocol + '//' + window.location.host + '/' + trackingController + '/' + registerBrochureDownloadAction;
 
-        var body = JSON.stringify({ id: brochureId, title: brochureTitle, productTitle: productTitle, productSku: productSku });
+        var body = JSON.stringify({ Id: brochureId, Title: brochureTitle, ProductTitle: productTitle, ProductSku: productSku});
+
+        postBodyData(url, body);
+    }
+
+    var registerGalleryView = function ($el) {
+        var elData = $el.data();
+
+        var productTitle = elData.productTitle;
+        var productSku = elData.productSku;
+        var galleryId = elData.galleryId;
+        var factions = elData.factions;
+        var productType = elData.productType;
+
+        var url = window.location.protocol + '//' + window.location.host + '/' + trackingController + '/' + registerGalleryViewedAction;
+
+        var body = JSON.stringify({ Id: galleryId, ProductTitle: productTitle, ProductSku: productSku, Factions: factions.split(','), ProductType: productType });
 
         postBodyData(url, body);
     }

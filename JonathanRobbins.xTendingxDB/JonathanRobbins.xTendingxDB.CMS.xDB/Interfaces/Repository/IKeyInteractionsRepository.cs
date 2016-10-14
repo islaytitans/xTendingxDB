@@ -14,5 +14,6 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Interfaces.Repository
         IEnumerable<BrochureDownload> GetBrochureDownloads(Contact contact);
         void Set(Contact contact, KeyInteractionsModel keyInteractionsModel);
         void Set(Contact contact, BrochureDownload brochureDownload);
+        void Set(Contact contact, ImageGalleryViewed imageGalleryViewed);
     }
 }
