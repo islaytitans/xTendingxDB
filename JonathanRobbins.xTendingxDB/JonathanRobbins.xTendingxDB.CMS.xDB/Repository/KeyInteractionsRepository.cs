@@ -42,11 +42,6 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Repository
             return brochuresDownloaded;
         }
 
-        public void Set(Contact contact, KeyInteractionsModel keyInteractionsModel)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Set(Contact contact, BrochureDownload brochureDownload)
         {
             if (contact == null)
@@ -96,6 +91,31 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Repository
             galleriesViewed.ProductSku = imageGalleryViewed.ProductSku;
             galleriesViewed.Factions = string.Join(",", imageGalleryViewed.Factions);
             galleriesViewed.ProductType = imageGalleryViewed.ProductType;
+
+            Log.Info("KeyInteractionsRepository Created entry in xDB " + "Contact - " + contact.ContactId, this);
+        }
+
+        public void Set(Contact contact, SampleOrder sampleOrder)
+        {
+            if (contact == null)
+            {
+                throw new ArgumentNullException(nameof(contact));
+            }
+            if (sampleOrder == null)
+            {
+                throw new ArgumentNullException(nameof(sampleOrder));
+            }
+
+            Log.Info("KeyInteractionsRepository Set " + "Contact - " + contact.ContactId, this);
+
+            IKeyInteractionsFacet facet = contact.GetFacet<IKeyInteractionsFacet>(KeyInteractionsFacet.FacetName);
+
+            Log.Info("KeyInteractionsRepository Got Facet " + "Contact - " + contact.ContactId, this);
+
+            var sampleOrdered = facet.SamplesOrdered.Create();
+            sampleOrdered.Title = sampleOrder.Title;
+            sampleOrdered.Sku = sampleOrder.Sku;
+            sampleOrdered.Type = sampleOrder.Type;
 
             Log.Info("KeyInteractionsRepository Created entry in xDB " + "Contact - " + contact.ContactId, this);
         }

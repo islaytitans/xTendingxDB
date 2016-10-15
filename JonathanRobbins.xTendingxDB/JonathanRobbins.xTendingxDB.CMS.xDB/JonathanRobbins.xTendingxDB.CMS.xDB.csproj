@@ -34,6 +34,10 @@
     <Reference Include="Sitecore.Analytics">
       <HintPath>..\Lib\Sitecore.Analytics.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.DataAccess, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Sitecore.Analytics.DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Analytics.Model">
       <HintPath>..\Lib\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
@@ -55,13 +59,17 @@
     <Compile Include="Elements\GalleryViewed.cs" />
     <Compile Include="Elements\SampleOrder.cs" />
     <Compile Include="Entities\BrochureDownload.cs" />
+    <Compile Include="Entities\ContactModel.cs" />
     <Compile Include="Entities\ImageGalleryViewed.cs" />
     <Compile Include="Entities\KeyInteractionsModel.cs" />
+    <Compile Include="Entities\SampleOrder.cs" />
     <Compile Include="Facets\KeyInteractionsFacet.cs" />
+    <Compile Include="Factories\ContactFactory.cs" />
     <Compile Include="Interfaces\Elements\IBrochureDownload.cs" />
     <Compile Include="Interfaces\Elements\IGalleryViewed.cs" />
     <Compile Include="Interfaces\Elements\ISampleOrder.cs" />
     <Compile Include="Interfaces\Facets\IKeyInteractionsFacet.cs" />
+    <Compile Include="Interfaces\Factories\IContactFactory.cs" />
     <Compile Include="Interfaces\Repository\IGoalRepository.cs" />
     <Compile Include="Interfaces\Repository\IKeyInteractionsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

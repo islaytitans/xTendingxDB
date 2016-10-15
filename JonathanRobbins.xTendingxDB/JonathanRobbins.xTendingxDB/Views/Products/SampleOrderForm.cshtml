@@ -1,0 +1,99 @@
+﻿
+@using Sitecore.Mvc
+@model JonathanRobbins.xTendingxDB.ViewModels.SampleOrderVM
+
+<h2>Order a sample</h2>
+
+<div id="orderForm">
+    @*@{
+        var options = new AjaxOptions()
+        {
+            HttpMethod = "Post",
+            InsertionMode = InsertionMode.ReplaceWith,
+            UpdateTargetId = "orderForm"
+        };
+    }
+
+
+     @using (Ajax.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, options))
+    {
+        @Html.Sitecore().FormHandler("Products", "OrderSample")
+        <div class="form-group">
+            @Html.LabelFor(x => x.FirstName, "First name")
+            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.FirstName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Surname, "Surname")
+            @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Surname)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.EmailAddress, "Email")
+            @Html.TextBoxFor(x => x.EmailAddress, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.EmailAddress)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.ShippingType, "Shipping Type")
+            @Html.EnumDropDownListFor(x => x.ShippingType, new { @class = "form-control" })
+        </div>
+
+        <input type="submit" title="Order sample" />
+    }*@
+
+    @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
+    {
+        @Html.Sitecore().FormHandler("Products", "OrderSample")
+        <div class="form-group">
+            @Html.LabelFor(x => x.FirstName, "First name")
+            @Html.TextBoxFor(x => x.FirstName, new {@class = "form-control"})
+            @Html.ValidationMessageFor(x => x.FirstName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Surname, "Surname")
+            @Html.TextBoxFor(x => x.Surname, new {@class = "form-control"})
+            @Html.ValidationMessageFor(x => x.Surname)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Role, "Role")
+            @Html.TextBoxFor(x => x.Role, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.EmailAddress, "Email")
+            @Html.TextBoxFor(x => x.EmailAddress, new {@class = "form-control"})
+            @Html.ValidationMessageFor(x => x.EmailAddress)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Number, "Number")
+            @Html.TextBoxFor(x => x.Number, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.ShippingType, "Shipping Type")
+            @Html.EnumDropDownListFor(x => x.ShippingType, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.AddressLine1, "Address line 1")
+            @Html.TextBoxFor(x => x.AddressLine1, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.AddressLine1)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.City, "City")
+            @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.City)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Country, "Country")
+            @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Country)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.PostCode, "PostCode")
+            @Html.TextBoxFor(x => x.PostCode, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.PostCode)
+        </div>
+        @Html.HiddenFor(x => x.ProductId, new { id = "HiddenText", @value = @Model.ProductId })
+
+        <input type="submit" title="Order sample"/>
+    }
+</div>
+
