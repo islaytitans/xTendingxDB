@@ -272,6 +272,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\GlassMapperSc.cs" />
@@ -295,6 +296,7 @@
     <Compile Include="ViewModels\ImageGalleryVM.cs" />
     <Compile Include="ViewModels\ProductDetailsVM.cs" />
     <Compile Include="ViewModels\ProductListingVM.cs" />
+    <Compile Include="ViewModels\SampleOrderVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\accordion.css" />
@@ -381,11 +383,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Products\ProductListing.cshtml" />
     <Content Include="Views\Products\ProductDetails.cshtml" />
+    <Content Include="Views\Products\SampleOrderForm.cshtml" />
+    <Content Include="Views\Products\SampleOrderResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\Sitecore\" />
-    <Folder Include="NewFolder1\" />
     <Folder Include="Views\Comment\" />
     <Folder Include="Views\Tracking\" />
   </ItemGroup>
@@ -451,6 +454,10 @@
     <ProjectReference Include="..\JonathanRobbins.xTendingxDB.Core\JonathanRobbins.xTendingxDB.Core.csproj">
       <Project>{115CEFF3-15E7-4339-85F9-08F52C22A88D}</Project>
       <Name>JonathanRobbins.xTendingxDB.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JonathanRobbins.xTendingxDB.Orders\JonathanRobbins.xTendingxDB.Orders.csproj">
+      <Project>{43508DB4-4FA5-450C-AF46-1A5D449A56EF}</Project>
+      <Name>JonathanRobbins.xTendingxDB.Orders</Name>
     </ProjectReference>
     <ProjectReference Include="..\JonathanRobbins.xTendingxDB.Products\JonathanRobbins.xTendingxDB.Products.csproj">
       <Project>{4c30c094-8144-4d32-bb24-7a22686f88f5}</Project>

@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Glass.Mapper.Sc.Fields;
+using JonathanRobbins.xTendingxDB.App_Start;
+using JonathanRobbins.xTendingxDB.CMS.Contracts;
 using JonathanRobbins.xTendingxDB.Core.SitecoreConfig;
 using JonathanRobbins.xTendingxDB.Products.Entities;
+using JonathanRobbins.xTendingxDB.Products.Interfaces;
+using JonathanRobbins.xTendingxDB.Products.Providers;
+using Microsoft.Practices.Unity;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Links;
@@ -15,6 +20,8 @@ namespace JonathanRobbins.xTendingxDB.ViewModels
 {
     public class ProductListingVM
     {
+        private readonly IUnityContainer _container = UnityConfig.GetConfiguredContainer();
+
         public string Title { get; set; }
         public string Summary { get; set; }
         public HtmlString Image { get; set; }
@@ -35,17 +42,8 @@ namespace JonathanRobbins.xTendingxDB.ViewModels
             Brochure = new BrochureVM(product.Item);
             Sku = product.Sku;
 
-            string url = LinkManager.GetItemUrl(Products.SitecoreConfig.Nodes.ProductDetails);
-
-            if (url.EndsWith("/"))
-            {
-                url = url.Remove(url.LastIndexOf('/'));
-            }
-
-            int lastSlash = url.LastIndexOf('/');
-            url = (lastSlash > -1) ? url.Substring(0, lastSlash + 1) : url;
-
-            ProductDetailsUrl = $"{url}{product.Item.Name.ToLower().Trim().Replace(" ","-")}";
+            var productLinkProvider = _container.Resolve<IProductLinkProvider>();
+            ProductDetailsUrl = productLinkProvider.GetProductUrl(product.Item.Name);
 
             if (!string.IsNullOrWhiteSpace(product.Item["Type"]))
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Glass.Mapper.Sc.Web.Mvc;
 using JonathanRobbins.xTendingxDB.CMS.xDB.Entities;
 using JonathanRobbins.xTendingxDB.CMS.xDB.Interfaces.Repository;
 using JonathanRobbins.xTendingxDB.CMS.xDB.Repository;
@@ -12,7 +13,7 @@ using Sitecore.Diagnostics;
 
 namespace JonathanRobbins.xTendingxDB.Controllers
 {
-    public class TrackingController : Controller
+    public class TrackingController : GlassController
     {
         private IGoalRepository _goalRepository;
         private IKeyInteractionsRepository _keyInteractionsRepository;
