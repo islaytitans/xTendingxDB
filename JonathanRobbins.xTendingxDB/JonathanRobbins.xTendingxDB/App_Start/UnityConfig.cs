@@ -1,6 +1,8 @@
 using System;
 using JonathanRobbins.xTendingxDB.CMS.Contracts;
 using JonathanRobbins.xTendingxDB.CMS.Implementations;
+using JonathanRobbins.xTendingxDB.CMS.xDB.Factories;
+using JonathanRobbins.xTendingxDB.CMS.xDB.Interfaces.Factories;
 using JonathanRobbins.xTendingxDB.CMS.xDB.Interfaces.Repository;
 using JonathanRobbins.xTendingxDB.CMS.xDB.Repository;
 using JonathanRobbins.xTendingxDB.Orders.Interfaces;
@@ -59,6 +61,7 @@ namespace JonathanRobbins.xTendingxDB.App_Start
             container.RegisterType<IKeyInteractionsRepository, KeyInteractionsRepository>();
             container.RegisterType<IProductLinkProvider, ProductLinkProvider>();
             container.RegisterType<IOrderRepository, OrderRepository>();
+            container.RegisterType<IContactFactory, ContactFactory>();
         }
     }
 }

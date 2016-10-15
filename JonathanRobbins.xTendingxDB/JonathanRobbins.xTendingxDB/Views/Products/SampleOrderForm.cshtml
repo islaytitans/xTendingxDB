@@ -55,13 +55,41 @@
             @Html.ValidationMessageFor(x => x.Surname)
         </div>
         <div class="form-group">
+            @Html.LabelFor(x => x.Role, "Role")
+            @Html.TextBoxFor(x => x.Role, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
             @Html.LabelFor(x => x.EmailAddress, "Email")
             @Html.TextBoxFor(x => x.EmailAddress, new {@class = "form-control"})
             @Html.ValidationMessageFor(x => x.EmailAddress)
         </div>
         <div class="form-group">
+            @Html.LabelFor(x => x.Number, "Number")
+            @Html.TextBoxFor(x => x.Number, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
             @Html.LabelFor(x => x.ShippingType, "Shipping Type")
-            @Html.EnumDropDownListFor(x => x.ShippingType, new {@class = "form-control"})
+            @Html.EnumDropDownListFor(x => x.ShippingType, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.AddressLine1, "Address line 1")
+            @Html.TextBoxFor(x => x.AddressLine1, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.AddressLine1)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.City, "City")
+            @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.City)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Country, "Country")
+            @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Country)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.PostCode, "PostCode")
+            @Html.TextBoxFor(x => x.PostCode, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.PostCode)
         </div>
 
         <input type="submit" title="Order sample"/>
