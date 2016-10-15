@@ -3,9 +3,12 @@ using JonathanRobbins.xTendingxDB.CMS.Contracts;
 using JonathanRobbins.xTendingxDB.CMS.Implementations;
 using JonathanRobbins.xTendingxDB.CMS.xDB.Interfaces.Repository;
 using JonathanRobbins.xTendingxDB.CMS.xDB.Repository;
+using JonathanRobbins.xTendingxDB.Orders.Interfaces;
+using JonathanRobbins.xTendingxDB.Orders.Repositories;
 using JonathanRobbins.xTendingxDB.Products;
 using JonathanRobbins.xTendingxDB.Products.Implementations;
 using JonathanRobbins.xTendingxDB.Products.Interfaces;
+using JonathanRobbins.xTendingxDB.Products.Providers;
 using JonathanRobbins.xTendingxDB.SearchLogic.Implementations;
 using JonathanRobbins.xTendingxDB.SearchLogic.Interfaces;
 using Microsoft.Practices.Unity;
@@ -54,6 +57,8 @@ namespace JonathanRobbins.xTendingxDB.App_Start
                 new InjectionConstructor(container.Resolve<ISearchUtility<SearchResultItem>>()));
             container.RegisterType<IGoalRepository, GoalRepository>();
             container.RegisterType<IKeyInteractionsRepository, KeyInteractionsRepository>();
+            container.RegisterType<IProductLinkProvider, ProductLinkProvider>();
+            container.RegisterType<IOrderRepository, OrderRepository>();
         }
     }
 }
