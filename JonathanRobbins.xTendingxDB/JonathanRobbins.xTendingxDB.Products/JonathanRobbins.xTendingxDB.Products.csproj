@@ -72,7 +72,7 @@
     <Compile Include="Enums\ShipType.cs" />
     <Compile Include="Implementations\ProductRepository.cs" />
     <Compile Include="Interfaces\IProductRepository.cs" />
-    <Compile Include="Interfaces\ProductLinkProvider.cs" />
+    <Compile Include="Interfaces\IProductLinkProvider.cs" />
     <Compile Include="ProductConstants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ProductLinkProvider.cs" />

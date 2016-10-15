@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using JonathanRobbins.xTendingxDB.Products.Entities;
@@ -48,6 +49,29 @@ namespace JonathanRobbins.xTendingxDB.Products.Implementations
             }
 
             return products;
-        } 
+        }
+
+        public Product GetProductByUrl(Uri url)
+        {
+            if (url == null)
+            {
+                throw new ArgumentNullException(nameof(url));
+            }
+
+            string term = url.AbsolutePath.Split(new[] {"/"}, StringSplitOptions.RemoveEmptyEntries).Last();
+            term = WebUtility.HtmlDecode(term).Replace("-", " ");
+
+            if (string.IsNullOrEmpty(term))
+            {
+                return null;
+            }
+
+            var products = Search(new ProductSearchArgs(0, 1)
+            {
+                Term = term,
+            }).ToList();
+
+            return products.FirstOrDefault();
+        }
     }
 }
