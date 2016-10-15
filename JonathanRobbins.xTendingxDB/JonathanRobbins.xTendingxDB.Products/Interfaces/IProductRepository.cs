@@ -11,5 +11,6 @@ namespace JonathanRobbins.xTendingxDB.Products.Interfaces
     public interface IProductRepository
     {
         IEnumerable<Product> Search(ProductSearchArgs args);
+        Product GetProductByUrl(Uri url);
     }
 }

@@ -10,5 +10,6 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Entities
     {
         public IEnumerable<BrochureDownload> BrochureDownload { get; set; }
         public IEnumerable<ImageGalleryViewed> ImageGalleryViewed { get; set; }
+        public IEnumerable<SampleOrder> SampleOrders { get; set; }
     }
 }

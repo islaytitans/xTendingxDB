@@ -2,22 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
 using Glass.Mapper.Sc.Web.Mvc;
 using JonathanRobbins.xTendingxDB.CMS.xDB.Entities;
 using JonathanRobbins.xTendingxDB.CMS.xDB.Interfaces.Factories;
+using JonathanRobbins.xTendingxDB.CMS.xDB.Interfaces.Repository;
 using JonathanRobbins.xTendingxDB.Orders.Interfaces;
-using JonathanRobbins.xTendingxDB.Products;
 using JonathanRobbins.xTendingxDB.Products.Entities;
-using JonathanRobbins.xTendingxDB.Products.Implementations;
 using JonathanRobbins.xTendingxDB.Products.Interfaces;
-using JonathanRobbins.xTendingxDB.SearchLogic.Implementations;
 using JonathanRobbins.xTendingxDB.ViewModels;
 using Sitecore.Analytics;
-using Sitecore.ContentSearch.SearchTypes;
-using Sitecore.Links;
+using Sitecore.Data.Items;
 using Sitecore.Mvc.Configuration;
 
 namespace JonathanRobbins.xTendingxDB.Controllers
@@ -27,18 +23,14 @@ namespace JonathanRobbins.xTendingxDB.Controllers
         private readonly IProductRepository _productRepository;
         private readonly IOrderRepository _orderRepository;
         private readonly IContactFactory _contactFactory;
+        private readonly IKeyInteractionsRepository _keyInteractionsRepository;
 
-        public ProductsController(IProductRepository productRepository, IProductLinkProvider productLinkProvider, IOrderRepository orderRepository, IContactFactory contactFactory)
+        public ProductsController(IProductRepository productRepository, IProductLinkProvider productLinkProvider, IOrderRepository orderRepository, IContactFactory contactFactory, IKeyInteractionsRepository keyInteractionsRepository)
         {
             _productRepository = productRepository;
             _orderRepository = orderRepository;
             _contactFactory = contactFactory;
-        }
-
-        // GET: Products
-        public ActionResult Index()
-        {
-            return View();
+            _keyInteractionsRepository = keyInteractionsRepository;
         }
 
         public ActionResult Search()
@@ -68,25 +60,11 @@ namespace JonathanRobbins.xTendingxDB.Controllers
 
         public ActionResult GetProductDetailsByUrl()
         {
-            string term = HttpContext.Request.Url.AbsolutePath.Split(new[] { "/" }, StringSplitOptions.RemoveEmptyEntries).Last();
+            var product = _productRepository.GetProductByUrl(HttpContext.Request.Url);
 
-            term = WebUtility.HtmlDecode(term).Replace("-", " ");
-
-            if (string.IsNullOrEmpty(term))
+            if (product != null)
             {
-                return View("ProductDetails");
-            }
-
-            var args = new ProductSearchArgs(0, 1)
-            {
-                Term = term,
-            };
-
-            var products = _productRepository.Search(args).ToList();
-
-            if (products.Any())
-            {
-                var productDetailsVM = new ProductDetailsVM(products.FirstOrDefault());
+                var productDetailsVM = new ProductDetailsVM(product);
 
                 return View("ProductDetails", productDetailsVM);
             }
@@ -106,7 +84,9 @@ namespace JonathanRobbins.xTendingxDB.Controllers
             }
 
             if (!Tracker.IsActive)
+            {
                 Tracker.StartTracking();
+            }
 
             _orderRepository.Add();
 
@@ -115,6 +95,17 @@ namespace JonathanRobbins.xTendingxDB.Controllers
             var contactModel = Mapper.Map<ContactModel>(sampleOrderVm);
 
             _contactFactory.UpdateContact(contact, contactModel, "Sample Order");
+
+            var product = _productRepository.GetProductByUrl(HttpContext.Request.Url);
+
+            var sampleOrder = new SampleOrder()
+            {
+                Title = product.Item["Title"],
+                Sku = product.Item["Sku"],
+                Type = product.Item["Type"]
+            };
+
+            _keyInteractionsRepository.Set(contact, sampleOrder);
 
             return PartialView("SampleOrderResults", true);
         }

@@ -62,6 +62,7 @@
     <Compile Include="Entities\ContactModel.cs" />
     <Compile Include="Entities\ImageGalleryViewed.cs" />
     <Compile Include="Entities\KeyInteractionsModel.cs" />
+    <Compile Include="Entities\SampleOrder.cs" />
     <Compile Include="Facets\KeyInteractionsFacet.cs" />
     <Compile Include="Factories\ContactFactory.cs" />
     <Compile Include="Interfaces\Elements\IBrochureDownload.cs" />

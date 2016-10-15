@@ -9,5 +9,8 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Interfaces.Elements
 {
     public interface ISampleOrder : IElement, IValidatable
     {
+        string Title { get; set; }
+        string Sku { get; set; }
+        string Type { get; set; }
     }
 }
