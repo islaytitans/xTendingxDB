@@ -165,7 +165,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JonathanRobbins.xTendingxDB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3B789EFB-B3EC-4E01-A8F6-5CAA0D1C8F0D}"
 	ProjectSection(SolutionItems) = preProject
-		readme.MD = readme.MD
+		..\README.md = ..\README.md
 		Site plan.txt = Site plan.txt
 	EndProjectSection
 EndProject
