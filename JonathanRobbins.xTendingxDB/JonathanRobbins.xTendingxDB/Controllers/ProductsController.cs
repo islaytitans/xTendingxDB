@@ -98,12 +98,7 @@ namespace JonathanRobbins.xTendingxDB.Controllers
 
             var product = _productRepository.GetProductByUrl(HttpContext.Request.Url);
 
-            var sampleOrder = new SampleOrder()
-            {
-                Title = product.Item["Title"],
-                Sku = product.Item["Sku"],
-                Type = product.Item["Type"]
-            };
+            var sampleOrder = new SampleOrder(product.Item);
 
             _keyInteractionsRepository.Set(contact, sampleOrder);
 
