@@ -91,7 +91,6 @@
             @Html.TextBoxFor(x => x.PostCode, new { @class = "form-control" })
             @Html.ValidationMessageFor(x => x.PostCode)
         </div>
-        @Html.HiddenFor(x => x.ProductId, new { id = "HiddenText", @value = @Model.ProductId })
 
         <input type="submit" title="Order sample"/>
     }
