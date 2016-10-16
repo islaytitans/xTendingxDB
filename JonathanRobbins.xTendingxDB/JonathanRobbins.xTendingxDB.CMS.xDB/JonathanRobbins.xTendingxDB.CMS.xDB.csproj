@@ -78,6 +78,14 @@
     <Compile Include="Interfaces\Factories\IContactFactory.cs" />
     <Compile Include="Interfaces\Repository\IGoalRepository.cs" />
     <Compile Include="Interfaces\Repository\IKeyInteractionsRepository.cs" />
+    <Compile Include="Pipelines\Contact\BrochureDownload\Processors\BrochureDownloadResultTransformer.cs" />
+    <Compile Include="Pipelines\Contact\BrochureDownload\Processors\ConstructBrochureDownloadsDataTable.cs" />
+    <Compile Include="Pipelines\Contact\BrochureDownload\Processors\GetBrochureDownloads.cs" />
+    <Compile Include="Pipelines\Contact\BrochureDownload\Processors\PopulateBrochureDownloadsWithXdbData.cs" />
+    <Compile Include="Pipelines\Contact\GalleryViewed\Processors\ConstructGalleriesViewedDataTable.cs" />
+    <Compile Include="Pipelines\Contact\GalleryViewed\Processors\GetGalleriesViewed.cs" />
+    <Compile Include="Pipelines\Contact\GalleryViewed\Processors\PopulateGalleriesViewedWithXdbData.cs" />
+    <Compile Include="Pipelines\Contact\GalleryViewed\Processors\GalleryViewedResultTransformer.cs" />
     <Compile Include="Pipelines\Contact\SampleOrder\Processors\ConstructSampleOrdersDataTable.cs" />
     <Compile Include="Pipelines\Contact\SampleOrder\Processors\GetSampleOrders.cs" />
     <Compile Include="Pipelines\Contact\SampleOrder\Processors\PopulateSampleOrdersWithXdbData.cs" />

@@ -12,9 +12,9 @@ using Sitecore.Cintel.Reporting.Processors;
 using Sitecore.Cintel.Reporting.ReportingServerDatasource;
 using Sitecore.Diagnostics;
 
-namespace JonathanRobbins.xTendingxDB.CMS.xDB.Pipelines.Contact.SampleOrder.Processors
+namespace JonathanRobbins.xTendingxDB.CMS.xDB.Pipelines.Contact.BrochureDownload.Processors
 {
-    public class GetSampleOrders : ReportProcessorBase
+    public class GetBrochureDownloads : ReportProcessorBase
     {
         private readonly QueryBuilder _contactsQueryBuilder = new QueryBuilder()
         {
@@ -26,7 +26,7 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Pipelines.Contact.SampleOrder.Proc
             Fields =
             {
                 "_id",
-                "KeyInteractions_SamplesOrdered", // path so the Sample Order Element in our custom xDB Facet
+                "KeyInteractions_BrochuresDownload", // path so the Sample Order Element in our custom xDB Facet
                 "System_VisitCount"
             }
         };
@@ -40,10 +40,10 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Pipelines.Contact.SampleOrder.Proc
             DataTable contactQueryExpression =
                 base.GetTableFromContactQueryExpression(_contactsQueryBuilder.Build(), contactId, new Guid?());
             Assert.IsTrue(contactQueryExpression.Rows.Count >= 1,
-                string.Format("Contact with id {0} was not found.", (object) contactId));
+                string.Format("Contact with id {0} was not found.", (object)contactId));
             int? nullable = DataRowExtensions.Field<int?>(contactQueryExpression.Rows[0], "System_VisitCount");
             if (nullable == null)
-                Log.Debug(string.Format("No VisitCount exists for contact: {0}", (object) contactId));
+                Log.Debug(string.Format("No VisitCount exists for contact: {0}", (object)contactId));
             args.QueryResult = contactQueryExpression;
         }
 
@@ -56,14 +56,15 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Pipelines.Contact.SampleOrder.Proc
 
             IKeyInteractionsRepository keyInteractionsRepository = new KeyInteractionsRepository();
 
-            var sampleOrders = keyInteractionsRepository.GetSampleOrders(contact);
+            var brochureDownloads = keyInteractionsRepository.GetBrochureDownloads(contact);
 
-            foreach (var sampleOrder in sampleOrders)
+            foreach (var brochureDownload in brochureDownloads)
             {
                 DataRow dataRow = queryResultTable.NewRow();
-                dataRow[Schema.Title.Name] = sampleOrder.Title;
-                dataRow[Schema.Sku.Name] = sampleOrder.Sku;
-                dataRow[Schema.Type.Name] = sampleOrder.Type;
+                dataRow[Schema.Id.Name] = brochureDownload.Id;
+                dataRow[Schema.Title.Name] = brochureDownload.Title;
+                dataRow[Schema.ProductTitle.Name] = brochureDownload.ProductTitle;
+                dataRow[Schema.ProductSku.Name] = brochureDownload.ProductSku;
                 queryResultTable.Rows.Add(dataRow);
             }
 

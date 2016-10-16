@@ -12,9 +12,9 @@ using Sitecore.Cintel.Reporting.Processors;
 using Sitecore.Cintel.Reporting.ReportingServerDatasource;
 using Sitecore.Diagnostics;
 
-namespace JonathanRobbins.xTendingxDB.CMS.xDB.Pipelines.Contact.SampleOrder.Processors
+namespace JonathanRobbins.xTendingxDB.CMS.xDB.Pipelines.Contact.GalleryViewed.Processors
 {
-    public class GetSampleOrders : ReportProcessorBase
+    public class GetGalleriesViewed : ReportProcessorBase
     {
         private readonly QueryBuilder _contactsQueryBuilder = new QueryBuilder()
         {
@@ -26,7 +26,7 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Pipelines.Contact.SampleOrder.Proc
             Fields =
             {
                 "_id",
-                "KeyInteractions_SamplesOrdered", // path so the Sample Order Element in our custom xDB Facet
+                "KeyInteractions_GalleriesViewed", // path so the Sample Order Element in our custom xDB Facet
                 "System_VisitCount"
             }
         };
@@ -56,14 +56,16 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Pipelines.Contact.SampleOrder.Proc
 
             IKeyInteractionsRepository keyInteractionsRepository = new KeyInteractionsRepository();
 
-            var sampleOrders = keyInteractionsRepository.GetSampleOrders(contact);
+            var galleriesViewed = keyInteractionsRepository.GetGalleriesViewed(contact);
 
-            foreach (var sampleOrder in sampleOrders)
+            foreach (var galleryViewed in galleriesViewed)
             {
                 DataRow dataRow = queryResultTable.NewRow();
-                dataRow[Schema.Title.Name] = sampleOrder.Title;
-                dataRow[Schema.Sku.Name] = sampleOrder.Sku;
-                dataRow[Schema.Type.Name] = sampleOrder.Type;
+                dataRow[Schema.Id.Name] = galleryViewed.Id;
+                dataRow[Schema.Factions.Name] = string.Join(", ", galleryViewed.Factions);
+                dataRow[Schema.ProductSku.Name] = galleryViewed.ProductSku;
+                dataRow[Schema.ProductSku.Name] = galleryViewed.ProductTitle;
+                dataRow[Schema.ProductType.Name] = galleryViewed.ProductType;
                 queryResultTable.Rows.Add(dataRow);
             }
 
