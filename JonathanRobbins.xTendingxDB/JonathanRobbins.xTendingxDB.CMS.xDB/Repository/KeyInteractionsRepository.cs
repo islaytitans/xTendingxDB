@@ -42,6 +42,46 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Repository
             return brochuresDownloaded;
         }
 
+        public IEnumerable<SampleOrder> GetSampleOrders(Contact contact)
+        {
+            IKeyInteractionsFacet facet = contact.GetFacet<IKeyInteractionsFacet>(KeyInteractionsFacet.FacetName);
+
+            var sampleOrders = new List<SampleOrder>();
+
+            foreach (ISampleOrder sampleOrder in facet.SamplesOrdered)
+            {
+                sampleOrders.Add(new SampleOrder()
+                {
+                    Title = sampleOrder.Title,
+                    Sku = sampleOrder.Sku,
+                    Type = sampleOrder.Type
+                });
+            }
+
+            return sampleOrders;
+        }
+
+        public IEnumerable<ImageGalleryViewed> GetGalleriesViewed(Contact contact)
+        {
+            IKeyInteractionsFacet facet = contact.GetFacet<IKeyInteractionsFacet>(KeyInteractionsFacet.FacetName);
+
+            var imageGalleryViewed = new List<ImageGalleryViewed>();
+
+            foreach (var galleryViewed in facet.GalleriesViewed)
+            {
+                imageGalleryViewed.Add(new ImageGalleryViewed()
+                {
+                    Id = galleryViewed.Id,
+                    Factions = galleryViewed.Factions.Split(new []{","}, StringSplitOptions.RemoveEmptyEntries),
+                    ProductTitle = galleryViewed.ProductTitle,
+                    ProductSku = galleryViewed.ProductSku,
+                    ProductType = galleryViewed.ProductType,
+                });
+            }
+
+            return imageGalleryViewed;
+        }
+
         public void Set(Contact contact, BrochureDownload brochureDownload)
         {
             if (contact == null)

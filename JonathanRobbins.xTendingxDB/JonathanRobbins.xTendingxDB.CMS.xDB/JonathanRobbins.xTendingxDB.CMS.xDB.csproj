@@ -41,6 +41,12 @@
     <Reference Include="Sitecore.Analytics.Model">
       <HintPath>..\Lib\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Cintel">
+      <HintPath>..\Lib\Sitecore.Cintel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Cintel.Client">
+      <HintPath>..\Lib\Sitecore.Cintel.Client.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Sitecore.Kernel.dll</HintPath>
@@ -72,6 +78,19 @@
     <Compile Include="Interfaces\Factories\IContactFactory.cs" />
     <Compile Include="Interfaces\Repository\IGoalRepository.cs" />
     <Compile Include="Interfaces\Repository\IKeyInteractionsRepository.cs" />
+    <Compile Include="Pipelines\Contact\BrochureDownload\Processors\BrochureDownloadResultTransformer.cs" />
+    <Compile Include="Pipelines\Contact\BrochureDownload\Processors\ConstructBrochureDownloadsDataTable.cs" />
+    <Compile Include="Pipelines\Contact\BrochureDownload\Processors\GetBrochureDownloads.cs" />
+    <Compile Include="Pipelines\Contact\BrochureDownload\Processors\PopulateBrochureDownloadsWithXdbData.cs" />
+    <Compile Include="Pipelines\Contact\GalleryViewed\Processors\ConstructGalleriesViewedDataTable.cs" />
+    <Compile Include="Pipelines\Contact\GalleryViewed\Processors\GetGalleriesViewed.cs" />
+    <Compile Include="Pipelines\Contact\GalleryViewed\Processors\PopulateGalleriesViewedWithXdbData.cs" />
+    <Compile Include="Pipelines\Contact\GalleryViewed\Processors\GalleryViewedResultTransformer.cs" />
+    <Compile Include="Pipelines\Contact\SampleOrder\Processors\ConstructSampleOrdersDataTable.cs" />
+    <Compile Include="Pipelines\Contact\SampleOrder\Processors\GetSampleOrders.cs" />
+    <Compile Include="Pipelines\Contact\SampleOrder\Processors\PopulateSampleOrdersWithXdbData.cs" />
+    <Compile Include="Pipelines\Contact\SampleOrder\Processors\SampleOrderResultTransformer.cs" />
+    <Compile Include="Pipelines\Contact\Schema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\GoalRepository.cs" />
     <Compile Include="Repository\KeyInteractionsRepository.cs" />

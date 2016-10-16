@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Interfaces.Repository
     {
         KeyInteractionsModel Get(Contact contact);
         IEnumerable<BrochureDownload> GetBrochureDownloads(Contact contact);
+        IEnumerable<SampleOrder> GetSampleOrders(Contact contact);
+        IEnumerable<ImageGalleryViewed> GetGalleriesViewed(Contact contact);
         void Set(Contact contact, BrochureDownload brochureDownload);
         void Set(Contact contact, ImageGalleryViewed imageGalleryViewed);
         void Set(Contact contact, SampleOrder sampleOrder);
