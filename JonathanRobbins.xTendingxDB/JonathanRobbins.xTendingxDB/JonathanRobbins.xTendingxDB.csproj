@@ -350,6 +350,7 @@
     </Content>
     <None Include="App_Config\Include\xTendingxDB\xTendingxDB.ContentSearch.Lucene.Product.Master.Index.config" />
     <None Include="App_Config\Include\xTendingxDB\xTendingxDB.ContentSearch.Lucene.ProductConfigurations.config" />
+    <None Include="App_Config\Include\xTendingxDB\xTendingxDB.ExperienceProfile.config" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\app.js" />
