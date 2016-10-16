@@ -79,8 +79,7 @@ namespace JonathanRobbins.xTendingxDB.Controllers
         {
             if (!ModelState.IsValid)
             {
-                string url = HttpContext.Request.Url.AbsolutePath;
-                return RedirectToRoute(MvcSettings.SitecoreRouteName, new { pathInfo = url.TrimStart(new char[] { '/' }) });
+                return RedirectToRoute(MvcSettings.SitecoreRouteName, new { pathInfo = HttpContext.Request.Url.AbsolutePath.TrimStart(new char[] { '/' }), success = "false" });
             }
 
             if (!Tracker.IsActive)
@@ -102,7 +101,9 @@ namespace JonathanRobbins.xTendingxDB.Controllers
 
             _keyInteractionsRepository.Set(contact, sampleOrder);
 
-            return PartialView("SampleOrderResults", true);
+            return RedirectToRoute(MvcSettings.SitecoreRouteName, new { pathInfo = HttpContext.Request.Url.AbsolutePath.TrimStart(new char[] { '/' }), success = "true" });
+
+            //return PartialView("SampleOrderResults", true);
         }
 
         public ActionResult OrderSample()
