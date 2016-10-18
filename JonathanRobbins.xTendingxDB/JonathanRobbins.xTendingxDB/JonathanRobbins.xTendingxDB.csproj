@@ -361,8 +361,11 @@
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\Modules\tracking.js" />
-    <Content Include="sitecore\shell\client\Applications\ExperienceProfile\Contact\KeyInteractions\KeyInteractions.js" />
-    <Content Include="sitecore\shell\client\Applications\ExperienceProfile\Contact\KeyInteractions\SampleOrders.js" />
+    <Content Include="sitecore\shell\client\Applications\ExperienceProfile\Contact\Interactions\BrochureDownloads.js" />
+    <Content Include="sitecore\shell\client\Applications\ExperienceProfile\Contact\Interactions\GalleriesViewed.js" />
+    <Content Include="sitecore\shell\client\Applications\ExperienceProfile\Contact\Interactions\Interactions.js" />
+    <Content Include="sitecore\shell\client\Applications\ExperienceProfile\Contact\Interactions\SampleOrders.js" />
+    <Content Include="sitecore\shell\client\Applications\ExperienceProfile\Contact\Interactions\SampleOrdersTab.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

@@ -50,6 +50,9 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Pipelines.Contact.SampleOrder.Proc
         private void PassContactElementIntoQueryResult(ReportProcessorArgs args)
         {
             DataTable queryResultTable = new DataTable();
+            queryResultTable.Columns.Add(Schema.Title.ToColumn());
+            queryResultTable.Columns.Add(Schema.Sku.ToColumn());
+            queryResultTable.Columns.Add(Schema.Type.ToColumn());
 
             var contactRepository = Sitecore.Configuration.Factory.CreateObject("tracking/contactRepository", true) as ContactRepository;
             var contact = contactRepository.LoadContactReadOnly(args.ReportParameters.ContactId);
