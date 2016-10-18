@@ -392,6 +392,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\Sitecore\" />
+    <Folder Include="src\sass\" />
     <Folder Include="src\scripts\" />
     <Folder Include="Views\Comment\" />
     <Folder Include="Views\Tracking\" />
