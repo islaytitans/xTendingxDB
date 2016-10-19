@@ -1,0 +1,25 @@
+﻿// grid variables
+@desktop-max-width: 1280px;
+@gutter-width: 20;
+@columns: 12;
+@column-width: 85px;
+@gutter-width-px: @gutter-width * 1px;
+
+// Utility variable — you should never need to modify this
+@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
+
+// Set @total-width to 100% for a fluid layout
+@total-width: 100%;
+
+// mixin to calculate width, removed repeated width function
+.define-width(@numCols) {	
+	box-sizing:border-box;
+	width: @total-width*((((@gutter-width+@column-width)*@numCols)) / @gridsystem-width);
+}
+
+// set column size with padding left and right
+.column(@numCols,@columns: @columns) {
+	padding-left: @gutter-width-px;
+	padding-right: @gutter-width-px;
+	.define-width(@numCols);
+}
