@@ -1,0 +1,9 @@
+.row {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  width: 41.66666667%;
+}
+body {
+  background: red;
+}

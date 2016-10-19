@@ -3,21 +3,23 @@
 @using Sitecore.Mvc.Analytics.Extensions
 @using Sitecore.Mvc.Presentation
 
-<!DOCTYPE html>
+<!DOCTYPE html lang="en-gb">
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@Html.Sitecore().Field("title", new { DisableWebEdit = true })</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @Html.Sitecore().VisitorIdentification()
     @Styles.Render("~/bundles/css")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-    <script src="~/Scripts/jquery-ui-1.12.0.min.js"></script>
 </head>
 <body>
     <div>
         @RenderBody()
     </div>
+
+    <!-- scripts -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.0.min.js"></script>
 </body>
 </html>
