@@ -1,5 +1,7 @@
 ﻿// gulp require modules
 var gulp = require('gulp');
+var watch = require('gulp-watch');
+var runSequence = require('run-sequence');
 
 // less modules 
 var less = require('gulp-less');
@@ -14,3 +16,16 @@ gulp.task('less', function () {
     .pipe(gulp.dest('./dist/css'));
 });
 
+gulp.task('default', function () {
+    gulp.watch('./src/less/**/*.less', function() {       
+        runSequence('less', 'copy');
+    });
+});
+
+gulp.task('copy', function () {
+    return gulp.src([
+      './dist/css/*.css',
+      './dist/scripts/*.js'
+    ], { base: './' })
+  .pipe(gulp.dest('C:/inetpub/wwwroot/xTendingxDB/Website'));
+});

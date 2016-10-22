@@ -1,15 +1,16 @@
 ﻿// folder path variables
 @core: './src/less/core';
 @modules: './src/less/modules';
+@vendor: './src/less/vendor';
 
 // import core framework
+@import '@{core}/_colors';
 @import '@{core}/_breakpoints';
 @import '@{core}/_grid';
 
-// import reset
+// import reset 
+@import '@{vendor}/normalize';
 
 // import modules
-
-body {
-    background:red;
-}
+@import '@{modules}/_header';
+@import '@{modules}/_main-navigation'; 

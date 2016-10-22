@@ -392,6 +392,10 @@
     <Content Include="src\less\core\_grid.less" />
     <Content Include="src\less\core\_breakpoints.less" />
     <Content Include="src\less\modules\_banner.less" />
+    <Content Include="src\less\core\_colors.less" />
+    <Content Include="src\less\modules\_main-navigation.less" />
+    <Content Include="src\less\modules\_header.less" />
+    <Content Include="src\less\vendor\_normalize.less" />
     <None Include="Views\Navigation\SubNavigation.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Products\ProductListing.cshtml" />

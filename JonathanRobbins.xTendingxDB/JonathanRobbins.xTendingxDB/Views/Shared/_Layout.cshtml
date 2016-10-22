@@ -3,15 +3,17 @@
 @using Sitecore.Mvc.Analytics.Extensions
 @using Sitecore.Mvc.Presentation
 
-<!DOCTYPE html lang="en-gb">
-<html>
+<!DOCTYPE html>
+<html lang="en-gb">
 <head>
     <title>@Html.Sitecore().Field("title", new { DisableWebEdit = true })</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @Html.Sitecore().VisitorIdentification()
     @Styles.Render("~/bundles/css")
+    <link href="~/dist/css/app.css" media="screen" rel="stylesheet" />
 </head>
 <body>
+
     <div>
         @RenderBody()
     </div>
