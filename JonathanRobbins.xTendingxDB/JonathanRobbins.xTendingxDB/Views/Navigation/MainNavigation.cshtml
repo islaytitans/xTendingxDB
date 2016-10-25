@@ -3,13 +3,17 @@
 
 @model IEnumerable<NavigationItem>
 
-<nav class="main-nav__navigation">
-    <ul class="main-nav__list">
+<nav class="main-nav" role="navigation">
+    <div class="menu" role="button">
+        Menu
+        <span></span>
+    </div>
+    <ul class="main-nav__collection">
         @foreach (NavigationItem navItem in Model)
         {
-            <li class="main-nav__list-item">
+            <li class="main-nav__item">
                 <a href="@LinkManager.GetItemUrl(navItem.Item)" title="@navItem.Item.DisplayName" tooltip="@navItem.Item.DisplayName"
-                   CssClass="main-nav__list-item-link 
+                   class="main-nav__link
                     @if (navItem.Active)
                     {
                         Html.Raw("active");

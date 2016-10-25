@@ -1,21 +1,33 @@
-﻿.banner {
+.banner {
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    min-height: 50vh;
+    display: flex;
+    @media @tablet-large {
+        min-height: calc(~"100vh - 84px");
+    }
     &__content {
-
+        align-self: center;
+        box-sizing: border-box;
+        max-width: @gridsystem-width;
+        margin: 0 auto;
+        padding: 40px @gutter-width * 1px;
+        @media @tablet-large {
+            padding: 80px @column-width * 1px;
+        }
     }
-
     &__title {
-
+        color: @white;
+        margin-bottom: 40px;
     }
-
     &__text {
-
+        color: @white;
+        font-size: 20px;
+        margin-bottom: 60px;
     }
-
     &__link {
-
+        min-width: @column-width * 2 * 1px;
     }
-
-    &__image {
-
-    }
+    &__image {}
 }

@@ -2,33 +2,11 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <header class="global-header">
     <div class="global-header__inner">
-        <nav class="main-nav" role="navigation">
-            <div class="menu" role="button">
-                Menu
-                <span></span>
-            </div>
-            <ul class="main-nav__collection">
-                <li class="main-nav__item">
-                    <a href="#" class="main-nav__link">Products</a>
-                </li>
-                <li class="main-nav__item">
-                    <a href="#" class="main-nav__link">FAQs</a>
-                </li>
-                <li class="main-nav__item">
-                    <a href="#" class="main-nav__link">Contact us</a>
-                </li>
-                <li class="main-nav__item">
-                    <a href="#" class="main-nav__link">Not Death Star plans</a>
-                </li>
-            </ul>
-        </nav>
+        @Html.Sitecore().Placeholder("Header")
     </div>
 </header>
-
-@Html.Sitecore().Placeholder("Header")
 <div class="full-width-page">
     <div class="full-width-page__content">
         @Html.Sitecore().Placeholder("Content")

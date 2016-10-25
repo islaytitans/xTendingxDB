@@ -3,15 +3,15 @@
 
 @inherits Glass.Mapper.Sc.Web.Mvc.GlassView<JonathanRobbins.xTendingxDB.Models.ContentShowcase.Banner>
 
-<div class="banner">
+<section class="banner">
     <div class="banner__content">
         <h2 class="banner__title">@Editable(x => x.Title)</h2>
         <div class="banner__text">
             @Editable(x => x.Strapline)
         </div>
-        @Html.Raw(@GlassHtml.RenderLink(Model, banner => banner.Link, new NameValueCollection { { "class", "banner__link" } }, true))
+        @Html.Raw(@GlassHtml.RenderLink(Model, banner => banner.Link, new NameValueCollection { { "class", "banner__link btn btn--ghost" } }, true))
     </div>
-    <div class="banner__image">
+    @* <div class="banner__image">
         @Html.Raw(GlassHtml.RenderImage(Model, banner => banner.Image, null, true))
-    </div>
-</div>
+    </div> *@
+</section>
