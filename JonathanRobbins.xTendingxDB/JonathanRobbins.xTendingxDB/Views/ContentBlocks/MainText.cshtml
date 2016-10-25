@@ -2,6 +2,8 @@
 @using Sitecore.Mvc.Presentation
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-<div class="rich-text main-text">
-    @Html.Raw(Html.Sitecore().Field("Main Text", Model.Item ?? Model.PageItem))
+<div class="body-copy">
+    <div class="body-copy__inner">
+        @Html.Raw(Html.Sitecore().Field("Main Text", Model.Item ?? Model.PageItem))
+    </div>
 </div>

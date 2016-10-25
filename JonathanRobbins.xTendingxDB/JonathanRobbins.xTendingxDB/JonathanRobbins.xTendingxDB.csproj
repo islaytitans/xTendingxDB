@@ -398,6 +398,10 @@
     <Content Include="src\less\vendor\_normalize.less" />
     <Content Include="src\less\core\_type.less" />
     <Content Include="src\less\core\_buttons.less" />
+    <Content Include="src\less\modules\_body-copy.less" />
+    <Content Include="src\less\modules\_logo.less" />
+    <Content Include="src\less\modules\_product-listing.less" />
+    <Content Include="src\less\modules\_product.less" />
     <None Include="Views\Navigation\SubNavigation.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Products\ProductListing.cshtml" />

@@ -4,7 +4,7 @@
 @inherits Glass.Mapper.Sc.Web.Mvc.GlassView<JonathanRobbins.xTendingxDB.Models.ContentShowcase.Banner>
 
 
-<section class="banner" background="@Model.Image.Src">
+<section class="banner" style="background-image:url(@Model.Image.Src)">
     <div class="banner__content">
         <h2 class="banner__title">@Editable(x => x.Title)</h2>
         <div class="banner__text">

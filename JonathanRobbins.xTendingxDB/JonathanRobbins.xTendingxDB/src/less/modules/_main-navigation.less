@@ -2,22 +2,22 @@
     width: 100%;
 
     &__collection {
+        display: flex;
         padding: 0;
         margin: 0;
-        @media @tablet-medium {
-          
-        }
+        align-content: center;
+        align-items: stretch;
+        justify-content: flex-end;
     }
     &__item {
         list-style: none;
-        @media @tablet-medium {}
     }
     &__link {
         display: inline-block;
         color: @white;
         text-decoration: none;
         padding: 10px;
-        background: #ccc;
+
 
         &:visited {
             color: @white;
