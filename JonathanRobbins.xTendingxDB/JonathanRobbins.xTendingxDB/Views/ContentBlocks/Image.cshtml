@@ -2,8 +2,7 @@
 @using Sitecore.Mvc.Presentation
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-<div class="content-padding panel main-image">
-    <div class="main-image__container">
-        @Html.Sitecore().Field("Image", Model.Item ?? Model.PageItem)
-    </div>
+
+<div class="image">
+    @Html.Sitecore().Field("Image", Model.Item ?? Model.PageItem)
 </div>

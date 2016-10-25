@@ -1,0 +1,22 @@
+﻿// folder path variables
+@core: './src/less/core';
+@modules: './src/less/modules';
+@vendor: './src/less/vendor';
+
+// import reset
+@import '@{vendor}/_normalize';
+
+// import core framework
+@import '@{core}/_colors';
+@import '@{core}/_breakpoints';
+@import '@{core}/_grid';
+
+// import type
+@import '@{core}/_type';
+@import '@{core}/_buttons';
+
+// import modules
+@import '@{modules}/_header';
+@import '@{modules}/_logo';
+@import '@{modules}/_main-navigation';
+@import '@{modules}/_banner';

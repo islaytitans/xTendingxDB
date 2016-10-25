@@ -340,6 +340,7 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="dist\css\app.css" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -351,6 +352,8 @@
     <None Include="App_Config\Include\xTendingxDB\xTendingxDB.ContentSearch.Lucene.Product.Master.Index.config" />
     <None Include="App_Config\Include\xTendingxDB\xTendingxDB.ContentSearch.Lucene.ProductConfigurations.config" />
     <None Include="App_Config\Include\xTendingxDB\xTendingxDB.ExperienceProfile.config" />
+    <Content Include="gulpfile.js" />
+    <Content Include="package.json" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\app.js" />
@@ -385,6 +388,16 @@
     <Content Include="Views\ContentBlocks\MainText.cshtml" />
     <Content Include="Views\ContentBlocks\Title.cshtml" />
     <Content Include="Views\ContentBlocks\Image.cshtml" />
+    <Content Include="src\less\app.less" />
+    <Content Include="src\less\core\_grid.less" />
+    <Content Include="src\less\core\_breakpoints.less" />
+    <Content Include="src\less\modules\_banner.less" />
+    <Content Include="src\less\core\_colors.less" />
+    <Content Include="src\less\modules\_main-navigation.less" />
+    <Content Include="src\less\modules\_header.less" />
+    <Content Include="src\less\vendor\_normalize.less" />
+    <Content Include="src\less\core\_type.less" />
+    <Content Include="src\less\core\_buttons.less" />
     <None Include="Views\Navigation\SubNavigation.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Products\ProductListing.cshtml" />
@@ -394,7 +407,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="dist\scripts\" />
     <Folder Include="Models\Sitecore\" />
+    <Folder Include="src\scripts\" />
     <Folder Include="Views\Comment\" />
     <Folder Include="Views\Tracking\" />
   </ItemGroup>
@@ -488,7 +503,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>43044</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

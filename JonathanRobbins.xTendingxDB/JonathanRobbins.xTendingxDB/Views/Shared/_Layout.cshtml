@@ -4,20 +4,22 @@
 @using Sitecore.Mvc.Presentation
 
 <!DOCTYPE html>
-<html>
+<html lang="en-gb">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@Html.Sitecore().Field("title", new { DisableWebEdit = true })</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @Html.Sitecore().VisitorIdentification()
     @Styles.Render("~/bundles/css")
+    <link href="~/dist/css/app.css" media="screen" rel="stylesheet" />
+</head>
+<body>
+    
+    @RenderBody()
+    
+    <!-- scripts -->
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/Scripts/jquery-ui-1.12.0.min.js"></script>
-</head>
-<body>
-    <div>
-        @RenderBody()
-    </div>
 </body>
 </html>
