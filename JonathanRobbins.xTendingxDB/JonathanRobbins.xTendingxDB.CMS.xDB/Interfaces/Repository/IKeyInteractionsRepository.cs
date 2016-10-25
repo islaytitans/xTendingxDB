@@ -11,7 +11,6 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Interfaces.Repository
 {
     public interface IKeyInteractionsRepository
     {
-        KeyInteractionsModel Get(Contact contact);
         IEnumerable<BrochureDownload> GetBrochureDownloads(Contact contact);
         IEnumerable<SampleOrder> GetSampleOrders(Contact contact);
         IEnumerable<ImageGalleryViewed> GetGalleriesViewed(Contact contact);

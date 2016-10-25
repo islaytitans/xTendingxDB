@@ -13,20 +13,20 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Facets
     {
         public static readonly string FacetName = "KeyInteractions";
 
-        public const string BrochuresDownloadName = "BrochuresDownload";
         public const string GalleriesViewedName = "GalleriesViewed";
+        public const string BrochuresDownloadName = "BrochuresDownload";
         public const string SamplesOrderedName = "SamplesOrdered";
 
         public KeyInteractionsFacet()
         {
-            EnsureCollection<IBrochureDownload>(BrochuresDownloadName);
             EnsureCollection<IGalleryViewed>(GalleriesViewedName);
+            EnsureCollection<IBrochureDownload>(BrochuresDownloadName);
             EnsureCollection<ISampleOrder>(SamplesOrderedName);
         }
 
-        public IElementCollection<IBrochureDownload> BrochuresDownloaded => GetCollection<IBrochureDownload>(BrochuresDownloadName);
-
         public IElementCollection<IGalleryViewed> GalleriesViewed => GetCollection<IGalleryViewed>(GalleriesViewedName);
+
+        public IElementCollection<IBrochureDownload> BrochuresDownloaded => GetCollection<IBrochureDownload>(BrochuresDownloadName);
 
         public IElementCollection<ISampleOrder> SamplesOrdered => GetCollection<ISampleOrder>(SamplesOrderedName);
     }

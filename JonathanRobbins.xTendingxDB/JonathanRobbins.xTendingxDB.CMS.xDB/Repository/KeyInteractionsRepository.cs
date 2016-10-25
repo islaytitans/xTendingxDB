@@ -15,11 +15,46 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Repository
 {
     public class KeyInteractionsRepository : IKeyInteractionsRepository
     {
-        public KeyInteractionsModel Get(Contact contact)
+        public IEnumerable<ImageGalleryViewed> GetGalleriesViewed(Contact contact)
         {
-            contact.GetFacet<IKeyInteractionsFacet>(KeyInteractionsFacet.FacetName);
+            IKeyInteractionsFacet facet = contact.GetFacet<IKeyInteractionsFacet>(KeyInteractionsFacet.FacetName);
 
-            throw new NotImplementedException();
+            var imageGalleryViewed = new List<ImageGalleryViewed>();
+
+            foreach (var galleryViewed in facet.GalleriesViewed)
+            {
+                imageGalleryViewed.Add(new ImageGalleryViewed()
+                {
+                    Id = galleryViewed.Id,
+                    Factions = galleryViewed.Factions.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries),
+                    ProductTitle = galleryViewed.ProductTitle,
+                    ProductSku = galleryViewed.ProductSku,
+                    ProductType = galleryViewed.ProductType,
+                });
+            }
+
+            return imageGalleryViewed;
+        }
+
+        public void Set(Contact contact, ImageGalleryViewed imageGalleryViewed)
+        {
+            if (contact == null)
+            {
+                throw new ArgumentNullException(nameof(contact));
+            }
+            if (imageGalleryViewed == null)
+            {
+                throw new ArgumentNullException(nameof(imageGalleryViewed));
+            }
+
+            IKeyInteractionsFacet facet = contact.GetFacet<IKeyInteractionsFacet>(KeyInteractionsFacet.FacetName);
+
+            var galleriesViewed = facet.GalleriesViewed.Create();
+            galleriesViewed.Id = imageGalleryViewed.Id;
+            galleriesViewed.ProductTitle = imageGalleryViewed.ProductTitle;
+            galleriesViewed.ProductSku = imageGalleryViewed.ProductSku;
+            galleriesViewed.Factions = string.Join(",", imageGalleryViewed.Factions);
+            galleriesViewed.ProductType = imageGalleryViewed.ProductType;
         }
 
         public IEnumerable<BrochureDownload> GetBrochureDownloads(Contact contact)
@@ -61,27 +96,6 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Repository
             return sampleOrders;
         }
 
-        public IEnumerable<ImageGalleryViewed> GetGalleriesViewed(Contact contact)
-        {
-            IKeyInteractionsFacet facet = contact.GetFacet<IKeyInteractionsFacet>(KeyInteractionsFacet.FacetName);
-
-            var imageGalleryViewed = new List<ImageGalleryViewed>();
-
-            foreach (var galleryViewed in facet.GalleriesViewed)
-            {
-                imageGalleryViewed.Add(new ImageGalleryViewed()
-                {
-                    Id = galleryViewed.Id,
-                    Factions = galleryViewed.Factions.Split(new []{","}, StringSplitOptions.RemoveEmptyEntries),
-                    ProductTitle = galleryViewed.ProductTitle,
-                    ProductSku = galleryViewed.ProductSku,
-                    ProductType = galleryViewed.ProductType,
-                });
-            }
-
-            return imageGalleryViewed;
-        }
-
         public void Set(Contact contact, BrochureDownload brochureDownload)
         {
             if (contact == null)
@@ -104,33 +118,6 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Repository
             brochureDownloaded.Id = brochureDownload.Id;
             brochureDownloaded.ProductSku = brochureDownload.ProductSku;
             brochureDownloaded.ProductTitle = brochureDownload.ProductTitle;
-
-            Log.Info("KeyInteractionsRepository Created entry in xDB " + "Contact - " + contact.ContactId, this);
-        }
-
-        public void Set(Contact contact, ImageGalleryViewed imageGalleryViewed)
-        {
-            if (contact == null)
-            {
-                throw new ArgumentNullException(nameof(contact));
-            }
-            if (imageGalleryViewed == null)
-            {
-                throw new ArgumentNullException(nameof(imageGalleryViewed));
-            }
-
-            Log.Info("KeyInteractionsRepository Set " + "Contact - " + contact.ContactId, this);
-
-            IKeyInteractionsFacet facet = contact.GetFacet<IKeyInteractionsFacet>(KeyInteractionsFacet.FacetName);
-
-            Log.Info("KeyInteractionsRepository Got Facet " + "Contact - " + contact.ContactId, this);
-
-            var galleriesViewed = facet.GalleriesViewed.Create();
-            galleriesViewed.Id = imageGalleryViewed.Id;
-            galleriesViewed.ProductTitle = imageGalleryViewed.ProductTitle;
-            galleriesViewed.ProductSku = imageGalleryViewed.ProductSku;
-            galleriesViewed.Factions = string.Join(",", imageGalleryViewed.Factions);
-            galleriesViewed.ProductType = imageGalleryViewed.ProductType;
 
             Log.Info("KeyInteractionsRepository Created entry in xDB " + "Contact - " + contact.ContactId, this);
         }
