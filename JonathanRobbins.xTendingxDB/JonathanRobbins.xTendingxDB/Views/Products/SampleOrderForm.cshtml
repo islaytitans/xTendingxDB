@@ -6,7 +6,8 @@
     <h2>Order a sample</h2>
 @if (Request.QueryString["success"] == null || Request.QueryString["success"].Equals("false", StringComparison.InvariantCultureIgnoreCase))
 {
-    if ((bool) Request.QueryString["success"]?.Equals("false", StringComparison.InvariantCultureIgnoreCase))
+    bool? successfulSubmit = Request.QueryString["success"]?.Equals("false", StringComparison.InvariantCultureIgnoreCase);
+    if (successfulSubmit.HasValue && !successfulSubmit.Value)
     {
         <p>Order submission failed</p>
     }

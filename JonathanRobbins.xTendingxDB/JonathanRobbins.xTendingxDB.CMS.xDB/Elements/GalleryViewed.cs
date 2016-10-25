@@ -1,10 +1,11 @@
 ﻿using System;
 using JonathanRobbins.xTendingxDB.CMS.xDB.Interfaces.Elements;
+using Sitecore.Analytics.Model.Framework;
 
 namespace JonathanRobbins.xTendingxDB.CMS.xDB.Elements
 {
     [Serializable]
-    public class GalleryViewed : Sitecore.Analytics.Model.Framework.Element, IGalleryViewed
+    public class GalleryViewed : Element, IGalleryViewed
     {
         private const string IdName = "Id";
         private const string ProductTitleName = "ProductTitle";
