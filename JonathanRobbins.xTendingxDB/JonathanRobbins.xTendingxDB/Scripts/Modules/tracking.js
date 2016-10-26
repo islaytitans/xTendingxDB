@@ -11,18 +11,20 @@ XX.tracking = (function ($) {
     var registerGalleryViewedAction = 'RegisterGalleryViewed';
 
     var bindTrackingEvents = function () {
-        $(document).on('click', trackingImageGalleryClass, function () {
+        $(trackingImageGalleryClass).on('click', function (e) {
+            e.preventDefault();
             var $el = $(this);
             registerGalleryView($el);
         });
 
-        $(document).on('click', trackingBrochureClass, function () {
+        $(trackingBrochureClass).on('click', function () {
             var $el = $(this);
             registerBrochureDownload($el);
         });
 
         // To register goals add '.js-tracking' class to trigger the post event
-        $(document).on('click', trackingGoalClass, function () {
+        $(document).on('click', trackingGoalClass, function (e) {
+            e.preventDefault();
             var $el = $(this);
             registerGoal($el);
         });
@@ -38,7 +40,7 @@ XX.tracking = (function ($) {
 
         var url = window.location.protocol + '//' + window.location.host + '/' + trackingController + '/' + registerBrochureDownloadAction;
 
-        var body = JSON.stringify({ Id: brochureId, Title: brochureTitle, ProductTitle: productTitle, ProductSku: productSku});
+        var body = { Id: brochureId, Title: brochureTitle, ProductTitle: productTitle, ProductSku: productSku};
 
         postBodyData(url, body);
     }
@@ -54,7 +56,7 @@ XX.tracking = (function ($) {
 
         var url = window.location.protocol + '//' + window.location.host + '/' + trackingController + '/' + registerGalleryViewedAction;
 
-        var body = JSON.stringify({ Id: galleryId, ProductTitle: productTitle, ProductSku: productSku, Factions: factions.split(','), ProductType: productType });
+        var body = { Id: galleryId, ProductTitle: productTitle, ProductSku: productSku, Factions: factions.split(','), ProductType: productType };
 
         postBodyData(url, body);
     }
@@ -111,4 +113,4 @@ XX.tracking = (function ($) {
         init: init
     };
 
-})(jQuery);
+}(jQuery));

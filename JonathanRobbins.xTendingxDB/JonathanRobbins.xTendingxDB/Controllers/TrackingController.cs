@@ -111,7 +111,12 @@ namespace JonathanRobbins.xTendingxDB.Controllers
             if (brochureDownload == null)
             {
                 Response.StatusCode = 400;
-                return Json(new ArgumentNullException());
+                return Json(new ArgumentNullException(nameof(brochureDownload)));
+            }
+            if (string.IsNullOrWhiteSpace(brochureDownload.Id))
+            {
+                Response.StatusCode = 400;
+                return Json(new ArgumentNullException(nameof(brochureDownload.Id)));
             }
 
             if (!Tracker.IsActive)
@@ -135,7 +140,12 @@ namespace JonathanRobbins.xTendingxDB.Controllers
             if (imageGalleryViewed == null)
             {
                 Response.StatusCode = 400;
-                return Json(new ArgumentNullException());
+                return Json(new ArgumentNullException(nameof(imageGalleryViewed)));
+            }
+            if (string.IsNullOrWhiteSpace(imageGalleryViewed.Id))
+            {
+                Response.StatusCode = 400;
+                return Json(new ArgumentNullException(nameof(imageGalleryViewed.Id)));
             }
 
             if (!Tracker.IsActive)
