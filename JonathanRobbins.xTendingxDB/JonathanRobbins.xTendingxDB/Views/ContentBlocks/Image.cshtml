@@ -3,6 +3,8 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 
-<div class="image">
-    @Html.Sitecore().Field("Image", Model.Item ?? Model.PageItem)
+<div class="main-image">
+    <div class="main-image__inner">
+        @Html.Sitecore().Field("Image", Model.Item ?? Model.PageItem)
+    </div>
 </div>
