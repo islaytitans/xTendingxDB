@@ -17,7 +17,7 @@ XX.gallery = (function($, undefined) {
     };
 
     var _openImageGallery = function () {
-      console.log('hi friends')
+      console.log('hi friends');
     };
 
     return {

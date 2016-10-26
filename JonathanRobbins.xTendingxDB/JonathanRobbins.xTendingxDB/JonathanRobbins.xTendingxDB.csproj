@@ -353,6 +353,7 @@
     <None Include="App_Config\Include\xTendingxDB\xTendingxDB.ContentSearch.Lucene.ProductConfigurations.config" />
     <None Include="App_Config\Include\xTendingxDB\xTendingxDB.ExperienceProfile.config" />
     <Content Include="gulpfile.js" />
+    <Content Include="images\space.jpg" />
     <Content Include="package.json" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
@@ -402,6 +403,7 @@
     <Content Include="src\less\modules\_logo.less" />
     <Content Include="src\less\modules\_product-listing.less" />
     <Content Include="src\less\modules\_product.less" />
+    <Content Include="src\less\core\_layout.less" />
     <None Include="Views\Navigation\SubNavigation.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Products\ProductListing.cshtml" />
