@@ -12,7 +12,6 @@ XX.tracking = (function ($) {
 
     var bindTrackingEvents = function () {
         $(trackingImageGalleryClass).on('click', function (e) {
-            e.preventDefault();
             var $el = $(this);
             registerGalleryView($el);
         });
@@ -24,7 +23,6 @@ XX.tracking = (function ($) {
 
         // To register goals add '.js-tracking' class to trigger the post event
         $(document).on('click', trackingGoalClass, function (e) {
-            e.preventDefault();
             var $el = $(this);
             registerGoal($el);
         });

@@ -30,6 +30,7 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Pipelines.Contact.GalleryViewed.Pr
 
                 TryFillData<string>(dataRow, new ViewField<string>(Schema.Id.Name), sourceRow, Schema.Id.Name);
                 TryFillData<string>(dataRow, new ViewField<string>(Schema.Title.Name), sourceRow, Schema.Title.Name);
+                TryFillData<string>(dataRow, new ViewField<string>(Schema.Factions.Name), sourceRow, Schema.Factions.Name);
                 TryFillData<string>(dataRow, new ViewField<string>(Schema.ProductTitle.Name), sourceRow, Schema.ProductTitle.Name);
                 TryFillData<string>(dataRow, new ViewField<string>(Schema.ProductSku.Name), sourceRow, Schema.ProductSku.Name);
                 TryFillData<string>(dataRow, new ViewField<string>(Schema.ProductType.Name), sourceRow, Schema.ProductType.Name);

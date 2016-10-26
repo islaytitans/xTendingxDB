@@ -1,7 +1,7 @@
 ﻿define(["sitecore", "/-/speak/v1/experienceprofile/DataProviderHelper.js"], function (sc, providerHelper) {
     var app = sc.Definitions.App.extend({
         initialized: function () {
-            var tableName = "brochureDownloads";
+            var tableName = "brochuredownloads";
             var localUrl = /intel/ + tableName;
 
             providerHelper.setupHeaders([
