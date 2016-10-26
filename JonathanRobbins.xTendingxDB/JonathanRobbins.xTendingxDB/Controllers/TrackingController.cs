@@ -24,12 +24,14 @@ namespace JonathanRobbins.xTendingxDB.Controllers
             _keyInteractionsRepository = keyInteractionsRepository;
         }
 
+        [HttpPost]
         [HttpGet]
         public string Test()
         {
             return "Give me a goal";
         }
 
+        [HttpPost]
         [HttpGet]
         public string AbandonSession()
         {
