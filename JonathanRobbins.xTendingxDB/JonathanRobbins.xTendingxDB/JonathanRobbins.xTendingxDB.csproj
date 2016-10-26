@@ -355,6 +355,7 @@
     <Content Include="gulpfile.js" />
     <Content Include="images\space.jpg" />
     <Content Include="package.json" />
+    <None Include="App_Config\Include\xTendingxDB\xTendingxDB.RegisterRoutes.config" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\app.js" />

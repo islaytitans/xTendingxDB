@@ -24,6 +24,7 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Pipelines.Contact.GalleryViewed.Pr
             args.ResultTableForView.Columns.Add(Schema.Id.ToColumn());
             args.ResultTableForView.Columns.Add(Schema.Title.ToColumn());
             args.ResultTableForView.Columns.Add(Schema.ProductTitle.ToColumn());
+            args.ResultTableForView.Columns.Add(Schema.Factions.ToColumn());
             args.ResultTableForView.Columns.Add(Schema.ProductSku.ToColumn());
             args.ResultTableForView.Columns.Add(Schema.ProductType.ToColumn());
         }

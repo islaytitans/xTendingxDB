@@ -21,3 +21,4 @@ XX.app = (function ($, undefined) {
 jQuery(document).ready(function () {
     XX.app.init();
 });
+

@@ -8,14 +8,18 @@
 <head>
     <title>@Html.Sitecore().Field("title", new { DisableWebEdit = true })</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
     @Html.Sitecore().VisitorIdentification()    
+=======
+    @Html.Sitecore().VisitorIdentification()
+>>>>>>> upstream/master
     <link href="~/dist/css/app.css" media="screen" rel="stylesheet" />
 </head>
 <body>
     
     @RenderBody()
     
-    <!-- scripts -->
+<!-- scripts -->
     <script src="~/Scripts/jquery-1.12.4.min.js"></script>
     <script src="~/Scripts/Modules/tracking.js"></script>
     <script src="~/Scripts/Modules/gallery.js"></script>
@@ -26,7 +30,5 @@
         @Scripts.Render("~/bundles/jqueryval")
         <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
         <script src="~/Scripts/jquery-ui-1.12.0.min.js"></script>*@
-
-
 </body>
 </html>

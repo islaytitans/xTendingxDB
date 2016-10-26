@@ -48,6 +48,23 @@
     }
 </section>
 
+<<<<<<< HEAD
+=======
+@{
+    bool? imagesPresent = Model.ImageGallery?.Images?.Any();
+    if (imagesPresent.HasValue && imagesPresent.Value)
+    {
+        <a href="#" class="js-image-gallery-tracking" data-product-title="@Model.Title" data-product-sku="@Model.Sku" data-gallery-id="@Model.ImageGallery.Id" data-factions="@string.Join(",", Model.Factions.Select(f => f.Title))" data-product-type="@Model.Type">View image gallery</a>
+        <div>
+            <h3></h3>
+            @foreach (var image in Model.ImageGallery.Images)
+            {
+                <img src="@image.Key" alt="@image.Value" width="300" height="300"/>
+            }
+        </div>
+    }
+}
+>>>>>>> upstream/master
 
 <div class="bod-copy">
     <div class="body-copy__inner">

@@ -52,6 +52,7 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Pipelines.Contact.GalleryViewed.Pr
             DataTable queryResultTable = new DataTable();
             queryResultTable.Columns.Add(Schema.Id.ToColumn());
             queryResultTable.Columns.Add(Schema.Title.ToColumn());
+            queryResultTable.Columns.Add(Schema.Factions.ToColumn());
             queryResultTable.Columns.Add(Schema.ProductTitle.ToColumn());
             queryResultTable.Columns.Add(Schema.ProductSku.ToColumn());
             queryResultTable.Columns.Add(Schema.ProductType.ToColumn());
@@ -69,7 +70,7 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Pipelines.Contact.GalleryViewed.Pr
                 dataRow[Schema.Id.Name] = galleryViewed.Id;
                 dataRow[Schema.Factions.Name] = string.Join(", ", galleryViewed.Factions);
                 dataRow[Schema.ProductSku.Name] = galleryViewed.ProductSku;
-                dataRow[Schema.ProductSku.Name] = galleryViewed.ProductTitle;
+                dataRow[Schema.ProductTitle.Name] = galleryViewed.ProductTitle;
                 dataRow[Schema.ProductType.Name] = galleryViewed.ProductType;
                 queryResultTable.Rows.Add(dataRow);
             }
