@@ -2,16 +2,16 @@
 using System.Web.Routing;
 using Sitecore.Pipelines;
 
-namespace JonathanRobbins.xTendingxDB.Core.SitecoreConfig
+namespace JonathanRobbins.xTendingxDB.CMS.Pipelines.Initialize
 {
     public class RegisterRoutes
     {
         public virtual void Process(PipelineArgs args)
         {
             RouteTable.Routes.MapRoute(
-                "xTendingxDBDefault",
-                "tracking/{action}",
-                new { controller = "Tracking" }
+                "xTendingxDBTracking",
+                "Tracking/{action}/{id}",
+                new { controller = "Tracking", action = "Test", id = UrlParameter.Optional }
             );
         }
     }

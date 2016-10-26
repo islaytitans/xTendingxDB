@@ -24,26 +24,27 @@ namespace JonathanRobbins.xTendingxDB.Controllers
             _keyInteractionsRepository = keyInteractionsRepository;
         }
 
-        [HttpPost]
-        [HttpGet]
         public string Test()
         {
             return "Give me a goal";
         }
 
-        [HttpPost]
-        [HttpGet]
         public string AbandonSession()
         {
             Session.Abandon();
             return "Abandoned";
         }
 
-        [HttpPost]
         public JsonResult RegisterOutcome(string outcomeDefinitionIdString, string contactIdString)
         {
-            Assert.ArgumentNotNullOrEmpty(outcomeDefinitionIdString, "outcomeDefinitionIdString");
-            Assert.ArgumentNotNullOrEmpty(contactIdString, "contactIdString");
+            if (string.IsNullOrWhiteSpace(outcomeDefinitionIdString))
+            {
+                throw new ArgumentNullException(nameof(outcomeDefinitionIdString));
+            }
+            if (string.IsNullOrWhiteSpace(contactIdString))
+            {
+                throw new ArgumentNullException(nameof(contactIdString));
+            }
 
             ID definitionId;
             if (!ID.TryParse(outcomeDefinitionIdString, out definitionId))
@@ -76,10 +77,12 @@ namespace JonathanRobbins.xTendingxDB.Controllers
             return Json(new Tuple<bool, string>(true, "Successfully registered outcome"));
         }
 
-        [HttpPost]
         public JsonResult RegisterGoal(string id, string description)
         {
-            Assert.ArgumentNotNullOrEmpty(id, "id");
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                throw new ArgumentNullException(nameof(id));
+            }
 
             ID goalId;
             if (!ID.TryParse(id, out goalId))
@@ -103,7 +106,6 @@ namespace JonathanRobbins.xTendingxDB.Controllers
             return Json(new Tuple<bool, string>(true, "Successfully registered goal"));
         }
 
-        [HttpPost]
         public JsonResult RegisterBrochureDownload(BrochureDownload brochureDownload)
         {
             if (brochureDownload == null)
@@ -128,7 +130,6 @@ namespace JonathanRobbins.xTendingxDB.Controllers
             return Json(new Tuple<bool, string>(true, "Successfully registered goal"));
         }
 
-        [HttpPost]
         public JsonResult RegisterGalleryViewed(ImageGalleryViewed imageGalleryViewed)
         {
             if (imageGalleryViewed == null)

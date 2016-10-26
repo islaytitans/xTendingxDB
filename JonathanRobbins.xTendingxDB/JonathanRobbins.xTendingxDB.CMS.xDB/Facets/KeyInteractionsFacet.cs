@@ -9,6 +9,7 @@ using Sitecore.Analytics.Model.Framework;
 
 namespace JonathanRobbins.xTendingxDB.CMS.xDB.Facets
 {
+    [Serializable]
     public class KeyInteractionsFacet : Facet, IKeyInteractionsFacet
     {
         public static readonly string FacetName = "KeyInteractions";
