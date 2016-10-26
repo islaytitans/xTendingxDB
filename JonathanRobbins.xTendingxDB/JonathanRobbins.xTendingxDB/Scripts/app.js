@@ -15,7 +15,7 @@ XX.app = (function ($, undefined) {
         init: init
     };
 
-}(jQuery));
+})(jQuery);
 
 jQuery(document).ready(function () {
     XX.app.init();

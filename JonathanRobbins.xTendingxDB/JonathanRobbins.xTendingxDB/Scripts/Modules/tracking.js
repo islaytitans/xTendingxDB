@@ -11,18 +11,18 @@ XX.tracking = (function ($) {
     var registerGalleryViewedAction = 'RegisterGalleryViewed';
 
     var bindTrackingEvents = function () {
-        $(trackingImageGalleryClass).on('click', function (e) {
+        $(trackingImageGalleryClass).off().on('click', function (e) {
             var $el = $(this);
             registerGalleryView($el);
         });
 
-        $(trackingBrochureClass).on('click', function () {
+        $(trackingBrochureClass).off().on('click', function () {
             var $el = $(this);
             registerBrochureDownload($el);
         });
 
         // To register goals add '.js-tracking' class to trigger the post event
-        $(document).on('click', trackingGoalClass, function (e) {
+        $(document).off().on('click', trackingGoalClass, function (e) {
             var $el = $(this);
             registerGoal($el);
         });
@@ -111,4 +111,4 @@ XX.tracking = (function ($) {
         init: init
     };
 
-}(jQuery));
+})(jQuery);
