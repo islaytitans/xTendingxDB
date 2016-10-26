@@ -364,6 +364,7 @@
     <Content Include="Scripts\jquery-ui-1.12.0.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\Modules\gallery.js" />
     <Content Include="Scripts\Modules\tracking.js" />
     <Content Include="sitecore\shell\client\Applications\ExperienceProfile\Contact\Interactions\BrochureDownloads.js" />
     <Content Include="sitecore\shell\client\Applications\ExperienceProfile\Contact\Interactions\GalleriesViewed.js" />
@@ -404,6 +405,9 @@
     <Content Include="src\less\modules\_product-listing.less" />
     <Content Include="src\less\modules\_product.less" />
     <Content Include="src\less\core\_layout.less" />
+    <Content Include="src\less\core\_icons.less" />
+    <Content Include="src\less\modules\_image.less" />
+    <Content Include="src\less\modules\_product-detail.less" />
     <None Include="Views\Navigation\SubNavigation.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Products\ProductListing.cshtml" />

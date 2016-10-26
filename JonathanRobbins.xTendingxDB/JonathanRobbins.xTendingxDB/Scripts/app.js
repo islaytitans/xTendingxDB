@@ -21,10 +21,3 @@ XX.app = (function ($, undefined) {
 jQuery(document).ready(function () {
     XX.app.init();
 });
-
-// Ensures using console.log doesn't cause errors in browsers that do not support it
-if (typeof console === "undefined") {
-    window.console = {
-        log: function () { }
-    };
-}
