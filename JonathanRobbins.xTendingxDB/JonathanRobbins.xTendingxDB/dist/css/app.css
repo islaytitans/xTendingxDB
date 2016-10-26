@@ -452,7 +452,7 @@ img {
 }
 .btn--ghost:hover {
   background-color: #fff;
-  color: #333;
+  color: #222;
 }
 .btn--red {
   background: #ce0c2c;
@@ -471,8 +471,9 @@ img {
   background: #117f07;
 }
 .global-header {
-  background: #333;
+  background: #222;
   min-height: 85px;
+  border-bottom: 1px solid #333;
 }
 .global-header__inner {
   max-width: 1260px;
@@ -485,27 +486,49 @@ img {
   padding: 20px 0;
 }
 .main-nav {
-  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row-reverse;
 }
 .main-nav__collection {
-  display: flex;
+  display: table;
+  table-layout: fixed;
   padding: 0;
   margin: 0;
-  align-content: center;
-  align-items: stretch;
-  justify-content: flex-end;
+  height: 100%;
 }
 .main-nav__item {
+  display: table-cell;
   list-style: none;
+  height: 100%;
+  border-right: 1px solid #333;
+}
+.main-nav__item:first-child {
+  border-left: 1px solid #333;
 }
 .main-nav__link {
-  display: inline-block;
+  box-sizing: border-box;
+  display: table;
   color: #fff;
   text-decoration: none;
-  padding: 10px;
+  padding: 10px 20px;
+  height: 100%;
+  transition: background 0.5s ease;
+}
+.main-nav__link:hover {
+  background: #333;
+}
+.main-nav__link:hover .main-nav__text {
+  transform: translateY(-5px);
 }
 .main-nav__link:visited {
   color: #fff;
+}
+.main-nav__text {
+  display: table-cell;
+  vertical-align: middle;
+  transform: translateY(0);
+  transition: transform 0.5s ease;
 }
 .banner {
   background-size: cover;
@@ -521,7 +544,7 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(51, 51, 51, 0.3);
+  background: rgba(34, 34, 34, 0.3);
   z-index: 0;
 }
 @media only screen and (min-width: 1024px) {
@@ -629,4 +652,7 @@ img {
 .product__icon {
   float: left;
   margin-right: 20px;
+}
+.icon-arrow-down:before {
+  content: "\e900";
 }

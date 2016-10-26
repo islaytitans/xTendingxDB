@@ -10,9 +10,9 @@
             <div class="product">
 
                 <div class="product__details">
-                    foreach (Faction faction in product.Factions)
+                    @foreach (Faction faction in product.Factions)
                     {
-                    <img src="@faction.ImageUrl" alt="@faction.Title" width="80" height="80" />
+                    <img src="@faction.ImageUrl" alt="@faction.Title" width="80" height="80" class="product__icon" />
                     }
                     <h3 class="product__title">@Editable(product, vm => vm.Title)</h3>
                     <div class="product__cat-price-container">
@@ -21,14 +21,14 @@
                             @product.PriceString
                         </span>
                     </div>
-                    <div class="product__summary">
+                    <p class="product__summary">
                         @Editable(product, vm => vm.Summary)
-                    </div>
+                    </p>
                     <div class="product__button-container">
                         <a href="@product.Brochure.Url" class="btn btn--red product__brochure-btn js-brochure-tracking js-goal-tracking"
                            data-product-title="@product.Title" data-product-sku="@product.Sku"
                            data-brochure-title="@product.Brochure.Title" data-brochure-id="@product.Brochure.Id"
-                           target="_blank">Brochure</a>
+                           target="_blank">Brochure </a>
                         <a href="@product.ProductDetailsUrl" class="btn btn--green product__view-btn" title="View">View</a>
                     </div>
                 </div>
