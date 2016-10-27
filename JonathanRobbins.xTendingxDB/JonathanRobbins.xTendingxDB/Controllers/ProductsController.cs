@@ -101,5 +101,10 @@ namespace JonathanRobbins.xTendingxDB.Controllers
 
             return RedirectToRoute(MvcSettings.SitecoreRouteName, new { pathInfo = HttpContext.Request.Url.AbsolutePath.TrimStart(new char[] { '/' }), success = "true" });
         }
+
+        public ActionResult OrderSample()
+        {
+            return PartialView("SampleOrderForm");
+        }
     }
 }
