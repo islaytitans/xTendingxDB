@@ -2,73 +2,79 @@
 @using Sitecore.Mvc
 @model JonathanRobbins.xTendingxDB.ViewModels.SampleOrderVM
 
+<section class="order-form">
+    <div class="order-form__inner">
+        <h2 class="order-form__title">Order a sample</h2>
 
-    <h2>Order a sample</h2>
-@if (Request.QueryString["success"] == null || Request.QueryString["success"].Equals("false", StringComparison.InvariantCultureIgnoreCase))
-{
-    bool? successfulSubmit = Request.QueryString["success"]?.Equals("false", StringComparison.InvariantCultureIgnoreCase);
-    if (successfulSubmit.HasValue && !successfulSubmit.Value)
-    {
-        <p>Order submission failed</p>
-    }
-
-    <div id="orderForm">
-        @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
+        @if (Request.QueryString["success"] == null || Request.QueryString["success"].Equals("false", StringComparison.InvariantCultureIgnoreCase))
         {
-            @Html.Sitecore().FormHandler("Products", "OrderSample")
-            <div class="form-group">
-                @Html.LabelFor(x => x.FirstName, "First name")
-                @Html.TextBoxFor(x => x.FirstName, new {@class = "form-control"})
-                @Html.ValidationMessageFor(x => x.FirstName)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(x => x.Surname, "Surname")
-                @Html.TextBoxFor(x => x.Surname, new {@class = "form-control"})
-                @Html.ValidationMessageFor(x => x.Surname)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(x => x.Role, "Role")
-                @Html.TextBoxFor(x => x.Role, new {@class = "form-control"})
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(x => x.EmailAddress, "Email")
-                @Html.TextBoxFor(x => x.EmailAddress, new {@class = "form-control"})
-                @Html.ValidationMessageFor(x => x.EmailAddress)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(x => x.Number, "Number")
-                @Html.TextBoxFor(x => x.Number, new {@class = "form-control"})
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(x => x.ShippingType, "Shipping Type")
-                @Html.EnumDropDownListFor(x => x.ShippingType, new {@class = "form-control"})
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(x => x.AddressLine1, "Address line 1")
-                @Html.TextBoxFor(x => x.AddressLine1, new {@class = "form-control"})
-                @Html.ValidationMessageFor(x => x.AddressLine1)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(x => x.City, "City")
-                @Html.TextBoxFor(x => x.City, new {@class = "form-control"})
-                @Html.ValidationMessageFor(x => x.City)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(x => x.Country, "Country")
-                @Html.TextBoxFor(x => x.Country, new {@class = "form-control"})
-                @Html.ValidationMessageFor(x => x.Country)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(x => x.PostCode, "PostCode")
-                @Html.TextBoxFor(x => x.PostCode, new {@class = "form-control"})
-                @Html.ValidationMessageFor(x => x.PostCode)
-            </div>
+            bool? successfulSubmit = Request.QueryString["success"]?.Equals("false", StringComparison.InvariantCultureIgnoreCase);
+            if (successfulSubmit.HasValue && !successfulSubmit.Value)
+            {
+                <p>Order submission failed</p>
+            }
 
-            <input type="submit" title="Order sample"/>
+            <div id="orderForm" class="form">
+                @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
+                {
+                    @Html.Sitecore().FormHandler("Products", "OrderSample")
+                    <div class="form__group">
+                        @Html.LabelFor(x => x.FirstName, "First name")
+                        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.FirstName)
+                    </div>
+                    <div class="form__group">
+                        @Html.LabelFor(x => x.Surname, "Surname")
+                        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Surname)
+                    </div>
+                    <div class="form__group">
+                        @Html.LabelFor(x => x.Role, "Role")
+                        @Html.TextBoxFor(x => x.Role, new { @class = "form-control" })
+                    </div>
+                    <div class="form__group">
+                        @Html.LabelFor(x => x.EmailAddress, "Email")
+                        @Html.TextBoxFor(x => x.EmailAddress, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.EmailAddress)
+                    </div>
+                    <div class="form__group">
+                        @Html.LabelFor(x => x.Number, "Number")
+                        @Html.TextBoxFor(x => x.Number, new { @class = "form-control" })
+                    </div>
+                    <div class="form__group">
+                        @Html.LabelFor(x => x.ShippingType, "Shipping Type")
+                        @Html.EnumDropDownListFor(x => x.ShippingType, new { @class = "form-control" })
+                    </div>
+                    <div class="form__group">
+                        @Html.LabelFor(x => x.AddressLine1, "Address line 1")
+                        @Html.TextBoxFor(x => x.AddressLine1, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.AddressLine1)
+                    </div>
+                    <div class="form__group">
+                        @Html.LabelFor(x => x.City, "City")
+                        @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.City)
+                    </div>
+                    <div class="form__group">
+                        @Html.LabelFor(x => x.Country, "Country")
+                        @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Country)
+                    </div>
+                    <div class="form__group">
+                        @Html.LabelFor(x => x.PostCode, "PostCode")
+                        @Html.TextBoxFor(x => x.PostCode, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.PostCode)
+                    </div>
+
+                    <div class="order-form__btn-container">
+                        <input type="submit" title="Order sample" class="btn btn--ghost" />
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p>Order successfully submitted</p>
         }
     </div>
-}
-else
-{
-    <p>Order successfully submitted</p>
-}
+</section>

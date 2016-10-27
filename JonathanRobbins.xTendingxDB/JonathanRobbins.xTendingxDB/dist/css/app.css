@@ -440,6 +440,7 @@ img {
   padding: 20px 40px;
   text-decoration: none;
   font-weight: 700;
+  cursor: pointer;
 }
 .btn:hover {
   text-decoration: none;
@@ -763,4 +764,86 @@ img {
   100% {
     opacity: 1;
   }
+}
+.quote {
+  background: #f1f1f1;
+}
+.quote .quote__inner {
+  max-width: 1260px;
+  margin: 0 auto;
+  text-align: center;
+}
+.quote .quote__text {
+  display: table;
+  font-size: 40px;
+  padding: 60px;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+.quote .quote__text:before,
+.quote .quote__text:after {
+  display: table-cell;
+  font-size: 50px;
+}
+.form {
+  width: 100%;
+}
+.form label {
+  color: #fff;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.form input[type="text"] {
+  box-sizing: border-box;
+  min-height: 42px;
+  border: 2px solid transparent;
+  margin-bottom: 32px;
+  width: 100%;
+  transform: scale(1);
+  transition: transform 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.form input[type="text"]:focus {
+  transform: scale(1.05);
+}
+.form select {
+  box-sizing: border-box;
+  min-height: 42px;
+  border: 2px solid transparent;
+  margin-bottom: 32px;
+  width: 100%;
+  transform: scale(1);
+  transition: transform 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.form select:focus {
+  transform: scale(1.05);
+}
+.form__group {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  width: 50%;
+}
+form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.order-form {
+  background: #ce0c2c;
+}
+.order-form__inner {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+.order-form__title {
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.order-form__btn-container {
+  text-align: center;
 }
