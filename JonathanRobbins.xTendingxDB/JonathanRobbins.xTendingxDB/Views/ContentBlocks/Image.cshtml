@@ -5,6 +5,6 @@
 
 <div class="main-image">
     <div class="main-image__inner">
-        @Html.Sitecore().Field("Image", Model.Item ?? Model.PageItem)
+        @Html.Sitecore().Field("Image", Model.Item ?? Model.PageItem, new { @class = "main-image__picture" })
     </div>
 </div>
