@@ -1,0 +1,52 @@
+﻿.form {
+    width: 100%;
+
+    label {
+        color: @white;
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+
+    input {
+        &[type="text"] {
+            box-sizing: border-box;
+            min-height: 42px;
+            border: 2px solid transparent;
+            margin-bottom: 32px;
+            width: 100%;
+            transform: scale(1);
+            transition: transform 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+            &:focus {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    select {
+        box-sizing: border-box;
+        min-height: 42px;
+        border: 2px solid transparent;
+        margin-bottom: 32px;
+        width: 100%;
+        transform: scale(1);
+        transition: transform 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+        &:focus {
+            transform: scale(1.05);
+        }
+    }
+
+    &__group {
+        .column(6);
+    }
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

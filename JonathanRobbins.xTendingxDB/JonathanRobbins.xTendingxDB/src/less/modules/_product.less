@@ -1,0 +1,52 @@
+.product {
+    display: flex;
+    .column(12);
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    &__details {
+        box-sizing: border-box;
+        flex-grow: 1;
+        .column(6);
+        order: 2;
+    }
+    &__title {}
+    &__cat-price-container {
+      display: flex;
+      font-weight: 700;
+    }
+    &__price,
+    &__type {
+        margin-bottom: 28px;
+        flex-grow: 1;
+        width: 50%;
+    }
+    &__price {}
+    &__summary {}
+    &__button-container {
+    }
+
+    &__view-btn {
+      margin-left: 20px;
+    }
+
+    &__brochure-btn {
+    }
+
+    &__images {
+        position: relative;
+        box-sizing: border-box;
+        flex-grow: 1;
+        order: 1;
+        .column(6);
+    }
+    &__icon {
+      float: left;
+      margin-right: 20px;
+    }
+    &__main-image {}
+}
+
+.icon-arrow-down:before {
+  content: "\e900";
+}

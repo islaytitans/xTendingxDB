@@ -8,6 +8,7 @@ XX.app = (function ($, undefined) {
         if (!$('body').hasClass('page-editor')) {
             // if body does not have page editor class
             XX.tracking.init();
+            XX.gallery.init();
         }
     };
 
@@ -20,3 +21,4 @@ XX.app = (function ($, undefined) {
 jQuery(document).ready(function () {
     XX.app.init();
 });
+

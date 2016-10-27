@@ -1,0 +1,21 @@
+﻿.quote {
+    background: #f1f1f1;
+    .quote__inner { 
+        max-width: @gridsystem-width;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .quote__text {
+        display: table;
+        font-size: 40px;
+        padding: 60px;
+        quotes: "\201C""\201D""\2018""\2019";
+
+        &:before,
+            &:after {
+            display: table-cell;
+            font-size: 50px;
+        }
+    }
+}

@@ -4,10 +4,6 @@
 @model IEnumerable<NavigationItem>
 
 <nav class="main-nav" role="navigation">
-    <div class="menu" role="button">
-        Menu
-        <span></span>
-    </div>
     <ul class="main-nav__collection">
         @foreach (NavigationItem navItem in Model)
         {
@@ -17,7 +13,11 @@
                     @if (navItem.Active)
                     {
                         Html.Raw("active");
-                    }">@navItem.Item.DisplayName</a>
+                    }">
+                    <span class="main-nav__text">
+                        @navItem.Item.DisplayName
+                    </span>
+                </a>
             </li>
         }
     </ul>

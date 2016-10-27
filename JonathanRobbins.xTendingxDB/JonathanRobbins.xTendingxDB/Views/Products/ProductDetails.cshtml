@@ -4,40 +4,63 @@
 
 @inherits Glass.Mapper.Sc.Web.Mvc.GlassView<JonathanRobbins.xTendingxDB.ViewModels.ProductDetailsVM>
 
-<h2>@Editable(Model, vm => vm.Title)</h2>
-
-<h3>@Model.PriceString</h3>
-
-<h4>@Model.Sku</h4>
-
-<p>@Editable(Model, vm => vm.Type)</p>
-<div>
-    @foreach (Faction faction in Model.Factions)
-    {
-        <img src="@faction.ImageUrl" alt="@faction.Title" width="80" height="80" />
-        <p>@faction.Title</p>
-    }
-</div>
-
-@{
-    bool? imagesPresent = Model.ImageGallery?.Images?.Any();
-    if (imagesPresent.HasValue && imagesPresent.Value)
-    {
-        <a href="#" class="js-image-gallery-tracking" data-product-title="@Model.Title" data-product-sku="@Model.Sku" data-gallery-id="@Model.ImageGallery.Id" data-factions="@string.Join(",", Model.Factions.Select(f => f.Title))" data-product-type="@Model.Type">View image gallery</a>
-        <div>
-            <h3></h3>
-            @foreach (var image in Model.ImageGallery.Images)
+<section class="product-detail">
+    <div class="product-detail__banner">
+        <div class="product-detail__banner-inner">
+            <div class="product-detail__faction">
+                @foreach (Faction faction in Model.Factions)
             {
-                <img src="@image.Key" alt="@image.Value" width="300" height="300"/>
-            }
-        </div>
-    }
-}
+                    <img src="@faction.ImageUrl" alt="@faction.Title" class="product-detail__faction-icon" width="80" height="80" />
+                    <p class="product-detail__faction-title">@faction.Title</p>
+                }
+            </div>
 
-<div>
-    @Editable(Model, vm => vm.Description)
+            <h1 class="product-detail__title">@Editable(Model, vm => vm.Title)</h1>
+
+            <p class="product-detail__price">@Model.PriceString</p>
+            <div class="product-detail__quick-summary">
+                <span class="product-detail__sku">@Model.Sku</span>
+                <span class="product-detail__type">@Editable(Model, vm => vm.Type)</span>
+            </div>
+        </div>
+    </div>
+    @{
+        bool? imagesPresent = Model.ImageGallery?.Images?.Any();
+        if (Model.ImageGallery != null && Model.ImageGallery.Images.Any())
+        {
+            <div class="product-detail__button-container">
+                <a href="#" class="js-image-gallery-tracking btn btn--ghost product-detail__btn"
+                   data-product-title="@Model.Title"
+                   data-product-sku="@Model.Sku"
+                   data-gallery-id="@Model.ImageGallery.Id"
+                   data-factions="@string.Join(",", Model.Factions.Select(f => f.Title))" data-product-type="@Model.Type">
+                    View image gallery
+                </a>
+            </div>
+            <div class="product-detail__gallery">
+                <div class="product-detail__gallery-inner">
+                    @foreach (var image in Model.ImageGallery.Images)
+                {
+                        <div class="product-detail__gallery-item">
+                            <img src="@image.Key" alt="@image.Value" width="640" height="340" class="product-detail__gallery-image" />
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    }
+</section>
+
+<div class="bod-copy">
+    <div class="body-copy__inner">
+        @Editable(Model, vm => vm.Description)
+    </div>
 </div>
-<q>
-   @Editable(Model, vm => vm.Quote)
-</q>
+<div class="quote">
+    <div class="quote__inner">
+        <q class="quote__text">
+            @Editable(Model, vm => vm.Quote)
+        </q>
+    </div>
+</div>
 
