@@ -26,7 +26,7 @@
     </div>
     @{
         bool? imagesPresent = Model.ImageGallery?.Images?.Any();
-        if (Model.ImageGallery != null && Model.ImageGallery.Images.Any())
+        if (imagesPresent.HasValue && imagesPresent.Value)
         {
             <div class="product-detail__button-container">
                 <a href="#" class="js-image-gallery-tracking btn btn--ghost product-detail__btn"
