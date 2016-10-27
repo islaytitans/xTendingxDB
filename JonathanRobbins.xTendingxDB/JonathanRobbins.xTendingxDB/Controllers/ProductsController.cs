@@ -87,8 +87,6 @@ namespace JonathanRobbins.xTendingxDB.Controllers
                 Tracker.StartTracking();
             }
 
-            _orderRepository.Add();
-
             var contact = _contactFactory.GetOrCreateContact(sampleOrderVm.EmailAddress);
 
             var contactModel = Mapper.Map<ContactModel>(sampleOrderVm);
@@ -102,13 +100,6 @@ namespace JonathanRobbins.xTendingxDB.Controllers
             _keyInteractionsRepository.Set(contact, sampleOrder);
 
             return RedirectToRoute(MvcSettings.SitecoreRouteName, new { pathInfo = HttpContext.Request.Url.AbsolutePath.TrimStart(new char[] { '/' }), success = "true" });
-
-            //return PartialView("SampleOrderResults", true);
-        }
-
-        public ActionResult OrderSample()
-        {
-            return PartialView("SampleOrderForm");
         }
     }
 }

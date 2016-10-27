@@ -91,6 +91,7 @@
     <Compile Include="Pipelines\Contact\SampleOrder\Processors\PopulateSampleOrdersWithXdbData.cs" />
     <Compile Include="Pipelines\Contact\SampleOrder\Processors\SampleOrderResultTransformer.cs" />
     <Compile Include="Pipelines\Contact\Schema.cs" />
+    <Compile Include="Pipelines\MergeContacts\MergeContactFacets.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\GoalRepository.cs" />
     <Compile Include="Repository\KeyInteractionsRepository.cs" />
