@@ -24,6 +24,11 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Repository
 
         public void RegisterGoal(ID goalId, string description)
         {
+            if (goalId.IsNull)
+            {
+                throw new ArgumentNullException(nameof(goalId));
+            }
+
             if (!Tracker.IsActive)
                 Tracker.StartTracking();
 
