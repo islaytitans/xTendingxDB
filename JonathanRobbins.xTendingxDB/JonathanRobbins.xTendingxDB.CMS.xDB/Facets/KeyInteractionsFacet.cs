@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using JonathanRobbins.xTendingxDB.CMS.xDB.Interfaces.Elements;
 using JonathanRobbins.xTendingxDB.CMS.xDB.Interfaces.Facets;
 using Sitecore.Analytics.Model.Framework;

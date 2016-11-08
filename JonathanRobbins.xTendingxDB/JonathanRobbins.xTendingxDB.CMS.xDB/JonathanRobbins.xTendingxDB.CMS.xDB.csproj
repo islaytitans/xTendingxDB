@@ -34,6 +34,10 @@
     <Reference Include="Sitecore.Analytics">
       <HintPath>..\Lib\Sitecore.Analytics.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.Core, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Sitecore.Analytics.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Analytics.DataAccess, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Sitecore.Analytics.DataAccess.dll</HintPath>
@@ -96,7 +100,12 @@
     <Compile Include="Repository\GoalRepository.cs" />
     <Compile Include="Repository\KeyInteractionsRepository.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\JonathanRobbins.xTendingxDB.Core\JonathanRobbins.xTendingxDB.Core.csproj">
+      <Project>{115ceff3-15e7-4339-85f9-08f52c22a88d}</Project>
+      <Name>JonathanRobbins.xTendingxDB.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

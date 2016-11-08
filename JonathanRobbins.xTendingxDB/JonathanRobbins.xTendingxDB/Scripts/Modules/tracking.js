@@ -11,7 +11,7 @@ XX.tracking = (function ($) {
     var registerGalleryViewedAction = 'RegisterGalleryViewed';
 
     var bindTrackingEvents = function () {
-        $(trackingImageGalleryClass).off().on('click', function (e) {
+        $(trackingImageGalleryClass).off().on('click', function () {
             var $el = $(this);
             registerGalleryView($el);
         });

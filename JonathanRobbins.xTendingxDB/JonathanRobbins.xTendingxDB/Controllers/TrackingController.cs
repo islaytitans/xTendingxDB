@@ -95,7 +95,7 @@ namespace JonathanRobbins.xTendingxDB.Controllers
 
             try
             {
-                _goalRepository.RegisterGoal(goalId, description, Tracker.Current.Session.Contact);
+                _goalRepository.RegisterGoal(goalId, description);
             }
             catch (Exception e)
             {
