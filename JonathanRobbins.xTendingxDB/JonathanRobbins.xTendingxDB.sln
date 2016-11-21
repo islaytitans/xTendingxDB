@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JonathanRobbins.xTendingxDB", "JonathanRobbins.xTendingxDB\JonathanRobbins.xTendingxDB.csproj", "{529F47D9-09DE-4044-ADDA-CCBF08EA0148}"
 EndProject
@@ -177,6 +177,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JonathanRobbins.xTendingxDB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JonathanRobbins.xTendingxDB.Orders", "JonathanRobbins.xTendingxDB.Orders\JonathanRobbins.xTendingxDB.Orders.csproj", "{43508DB4-4FA5-450C-AF46-1A5D449A56EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JonathanRobbins.xTendingxDB.Index", "JonathanRobbins.xTendingxDB.Index\JonathanRobbins.xTendingxDB.Index.csproj", "{DDA17DAA-9A22-4FAC-9ED0-FC1536112699}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -215,6 +217,10 @@ Global
 		{43508DB4-4FA5-450C-AF46-1A5D449A56EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43508DB4-4FA5-450C-AF46-1A5D449A56EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43508DB4-4FA5-450C-AF46-1A5D449A56EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA17DAA-9A22-4FAC-9ED0-FC1536112699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA17DAA-9A22-4FAC-9ED0-FC1536112699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA17DAA-9A22-4FAC-9ED0-FC1536112699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA17DAA-9A22-4FAC-9ED0-FC1536112699}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

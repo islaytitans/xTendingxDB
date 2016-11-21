@@ -349,6 +349,9 @@
     <Content Include="App_Config\Include\xTendingxDB\sites.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\Include\xTendingxDB\xTendingxDB.ContentSearch.Analytics.CustomFacets.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\xTendingxDB\xTendingxDB.ContentSearch.Lucene.Product.Master.Index.config" />
     <None Include="App_Config\Include\xTendingxDB\xTendingxDB.ContentSearch.Lucene.ProductConfigurations.config" />
     <None Include="App_Config\Include\xTendingxDB\xTendingxDB.ExperienceProfile.config" />
