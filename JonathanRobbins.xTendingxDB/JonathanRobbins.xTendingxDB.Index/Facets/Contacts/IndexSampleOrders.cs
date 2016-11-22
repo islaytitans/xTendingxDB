@@ -22,12 +22,16 @@ namespace JonathanRobbins.xTendingxDB.Index.Facets.Contacts
             {
                 var skus = (from s in keyInteractionsFacet.SamplesOrdered
                     select s.Sku).Distinct();
-                var types = (from s in keyInteractionsFacet.SamplesOrdered
-                    select s.Type).Distinct();
 
+                var favouriteType = keyInteractionsFacet.SamplesOrdered.GroupBy(s => s.Type)
+                    .OrderByDescending(gp => gp.Count())
+                    .Select(g => g.Key)
+                    .FirstOrDefault();
 
-                fields.Add(new IndexableDataField<string>("contact.SampleOrder.Skus", string.Join(",", skus)));
-                fields.Add(new IndexableDataField<string>("contact.SampleOrder.Types", string.Join(",", types)));
+                // DEBUG
+                fields.Add(new IndexableDataField<bool>("contact.SampleOrder.Example", skus.Any()));
+                fields.Add(new IndexableDataField<string[]>("contact.SampleOrder.Skus", skus.ToArray()));
+                fields.Add(new IndexableDataField<string>("contact.SampleOrder.FavouriteType", favouriteType));
             }
             return fields;
         }

@@ -491,6 +491,10 @@
       <Project>{115CEFF3-15E7-4339-85F9-08F52C22A88D}</Project>
       <Name>JonathanRobbins.xTendingxDB.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JonathanRobbins.xTendingxDB.Index\JonathanRobbins.xTendingxDB.Index.csproj">
+      <Project>{dda17daa-9a22-4fac-9ed0-fc1536112699}</Project>
+      <Name>JonathanRobbins.xTendingxDB.Index</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JonathanRobbins.xTendingxDB.Orders\JonathanRobbins.xTendingxDB.Orders.csproj">
       <Project>{43508DB4-4FA5-450C-AF46-1A5D449A56EF}</Project>
       <Name>JonathanRobbins.xTendingxDB.Orders</Name>
