@@ -7,20 +7,20 @@ using System.Linq.Expressions;
 
 namespace JonathanRobbins.xTendingxDB.CMS.xDB.Rules.Conditions.Segmentation
 {
-    public class ProductTypeCondition<T> : TypedQueryableStringOperatorCondition<T, IndexedContact> where T : VisitorRuleContext<IndexedContact>
+    public class ProductsOrderedCondition<T> : TypedQueryableStringOperatorCondition<T, IndexedContact> where T : VisitorRuleContext<IndexedContact>
     {
         protected override Expression<Func<IndexedContact, bool>> GetResultPredicate(T ruleContext)
         {
-            string fieldName = "contact.SampleOrder.FavouriteType";
+            string fieldName = "contact.SampleOrder.Skus";
 
-            return GetCompareExpression((Expression<Func<IndexedContact, string>>) (c => (string) c[(ObjectIndexerKey) fieldName]), Type);
+            return GetCompareExpression((Expression<Func<IndexedContact, string>>)(c => (string)c[(ObjectIndexerKey)fieldName]), Skus);
         }
 
-        public ProductTypeCondition()
+        public ProductsOrderedCondition()
         {
-            Type = string.Empty;
+            Skus = string.Empty;
         }
 
-        public string Type { get; set; }
+        public string Skus { get; set; }
     }
 }

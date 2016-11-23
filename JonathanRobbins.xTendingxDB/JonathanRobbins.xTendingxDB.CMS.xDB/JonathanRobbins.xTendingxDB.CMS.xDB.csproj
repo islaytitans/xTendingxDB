@@ -111,6 +111,7 @@
     <Compile Include="Repository\GoalRepository.cs" />
     <Compile Include="Repository\KeyInteractionsRepository.cs" />
     <Compile Include="Rules\Conditions\Segmentation\Example.cs" />
+    <Compile Include="Rules\Conditions\Segmentation\ProductsOrderedCondition.cs" />
     <Compile Include="Rules\Conditions\Segmentation\ProductTypeCondition.cs" />
   </ItemGroup>
   <ItemGroup>
