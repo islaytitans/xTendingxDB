@@ -1,7 +1,6 @@
 ﻿using Sitecore.Analytics.Rules.SegmentBuilder;
 using Sitecore.ContentSearch.Analytics.Models;
 using Sitecore.ContentSearch.Rules.Conditions;
-using Sitecore.ContentSearch.SearchTypes;
 using System;
 using System.Linq.Expressions;
 
@@ -13,14 +12,7 @@ namespace JonathanRobbins.xTendingxDB.CMS.xDB.Rules.Conditions.Segmentation
         {
             string fieldName = "contact.SampleOrder.Skus";
 
-            return GetCompareExpression((Expression<Func<IndexedContact, string>>)(c => (string)c[(ObjectIndexerKey)fieldName]), Skus);
+            return this.GetCompareExpression((Expression<Func<IndexedContact, string>>)(c => c[fieldName]), this.Value);
         }
-
-        public ProductsOrderedCondition()
-        {
-            Skus = string.Empty;
-        }
-
-        public string Skus { get; set; }
     }
 }
